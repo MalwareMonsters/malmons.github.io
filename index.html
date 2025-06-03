@@ -2,15 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Malmons World - Gh0st RAT</title>
+  <title>Malmons World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @font-face {
+      font-family: 'Terminal';
+      src: url('./fonts/Terminal.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       background-color: #111;
-      font-family: Arial, sans-serif;
+      font-family: 'Terminal', monospace;
       color: white;
     }
 
@@ -33,13 +40,12 @@
       width: 100%;
       text-align: center;
       z-index: 10;
-      pointer-events: none; /* allows clicking through to iframe */
+      pointer-events: none;
     }
 
     .overlay-top {
       top: 12px;
     }
-
 
     #logo-container img {
       height: 50px;
@@ -52,52 +58,64 @@
     }
 
     .overlay-bottom {
-  position: absolute;
-  bottom: 60px; /* lifted above PlayCanvas bar */
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-  pointer-events: none;
-}
+      bottom: 60px;
+    }
 
-#sponsor {
-  font-size: 14px;
-  color: #000; /* black text */
-}
+    #scene-selector {
+      margin-bottom: 10px;
+      pointer-events: auto;
+    }
 
-#sponsor a {
-  color: #1a73e8;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  pointer-events: auto;
-}
+    #scene-selector select {
+      font-family: 'Terminal', monospace;
+      font-size: 14px;
+      padding: 6px 12px;
+      background-color: #222;
+      color: white;
+      border: 1px solid #555;
+      border-radius: 4px;
+    }
 
-#sponsor img {
-  height: 20px;
-  vertical-align: middle;
-}
+    #sponsor {
+      font-size: 14px;
+      color: #000;
+    }
 
+    #sponsor a {
+      color: #1a73e8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: auto;
+    }
+
+    #sponsor img {
+      height: 20px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
-
   <div id="container">
-    <iframe 
-      src="https://playcanv.as/p/mfwUITNf/" 
-      allow="autoplay; fullscreen; vr"
-      allowfullscreen>
-    </iframe>
+    <iframe id="malmonFrame" allow="autoplay; fullscreen; vr" allowfullscreen></iframe>
 
     <!-- Top Overlay -->
     <div class="overlay-top" id="logo-container">
       <img src="malmonslogo.png" alt="Malmons Logo">
-      <h1>The Gh0st RAT Malmons</h1>
+      <h1 id="malmonTitle">Malmons</h1>
+    </div>
+
+    <!-- Scene Selector -->
+    <div class="overlay-bottom" id="scene-selector">
+      <select id="sceneDropdown">
+        <option value="gh0st_rat">Gh0st RAT</option>
+        <option value="flame">Flame</option>
+      </select>
     </div>
 
     <!-- Bottom Overlay -->
-    <div class="overlay-bottom" id="sponsor">
+    <div class="overlay-bottom" id="sponsor" style="bottom: 30px;">
       Sponsored by 
       <a href="https://malwarevillage.org" target="_blank">
         <img src="malware-village-logo.png" alt="Malware Village Logo"/>
@@ -106,5 +124,39 @@
     </div>
   </div>
 
+  <script>
+    const iframe = document.getElementById('malmonFrame');
+    const title = document.getElementById('malmonTitle');
+    const dropdown = document.getElementById('sceneDropdown');
+
+    const scenes = {
+      gh0st_rat: {
+        src: "https://playcanv.as/b/3f3c389e",
+        title: "The Gh0st RAT Malmons"
+      },
+      flame: {
+        src: "https://playcanv.as/b/458a3b3c",
+        title: "The Flame Malmons"
+      }
+    };
+
+    function loadScene(key) {
+      iframe.src = scenes[key].src;
+      title.textContent = scenes[key].title;
+    }
+
+    // Load initial scene from path or default to Gh0st RAT
+    const initialPath = window.location.pathname.toLowerCase().replace('/', '');
+    const initialScene = scenes[initialPath] ? initialPath : 'gh0st_rat';
+    dropdown.value = initialScene;
+    loadScene(initialScene);
+
+    // Scene switcher
+    dropdown.addEventListener('change', () => {
+      const selected = dropdown.value;
+      history.replaceState({}, '', '/' + selected); // update URL path
+      loadScene(selected);
+    });
+  </script>
 </body>
 </html>
