@@ -58,17 +58,17 @@
     }
 
     .overlay-bottom {
-      bottom: 60px;
+      bottom: 70px; /* lifted up further above gray bar */
     }
 
     #scene-selector {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       pointer-events: auto;
     }
 
     #scene-selector select {
       font-family: 'Terminal', monospace;
-      font-size: 14px;
+      font-size: 16px;
       padding: 6px 12px;
       background-color: #222;
       color: white;
@@ -77,8 +77,10 @@
     }
 
     #sponsor {
-      font-size: 14px;
+      font-size: 16px;
       color: #000;
+      margin-top: 6px;
+      pointer-events: auto;
     }
 
     #sponsor a {
@@ -87,11 +89,10 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      pointer-events: auto;
     }
 
     #sponsor img {
-      height: 20px;
+      height: 22px;
       vertical-align: middle;
     }
   </style>
@@ -106,21 +107,21 @@
       <h1 id="malmonTitle">Malmons</h1>
     </div>
 
-    <!-- Scene Selector -->
-    <div class="overlay-bottom" id="scene-selector">
-      <select id="sceneDropdown">
-        <option value="gh0st_rat">Gh0st RAT</option>
-        <option value="flame">Flame</option>
-      </select>
-    </div>
-
-    <!-- Bottom Overlay -->
-    <div class="overlay-bottom" id="sponsor" style="bottom: 30px;">
-      Sponsored by 
-      <a href="https://malwarevillage.org" target="_blank">
-        <img src="malware-village-logo.png" alt="Malware Village Logo"/>
-        Malware Village
-      </a>
+    <!-- Scene Selector & Sponsor (Bottom Overlay Grouped) -->
+    <div class="overlay-bottom">
+      <div id="scene-selector">
+        <select id="sceneDropdown">
+          <option value="gh0st_rat">Gh0st RAT</option>
+          <option value="flame">Flame</option>
+        </select>
+      </div>
+      <div id="sponsor">
+        Sponsored by 
+        <a href="https://malwarevillage.org" target="_blank">
+          <img src="malware-village-logo.png" alt="Malware Village Logo"/>
+          Malware Village
+        </a>
+      </div>
     </div>
   </div>
 
@@ -145,16 +146,14 @@
       title.textContent = scenes[key].title;
     }
 
-    // Load initial scene from path or default to Gh0st RAT
     const initialPath = window.location.pathname.toLowerCase().replace('/', '');
     const initialScene = scenes[initialPath] ? initialPath : 'gh0st_rat';
     dropdown.value = initialScene;
     loadScene(initialScene);
 
-    // Scene switcher
     dropdown.addEventListener('change', () => {
       const selected = dropdown.value;
-      history.replaceState({}, '', '/' + selected); // update URL path
+      history.replaceState({}, '', '/' + selected);
       loadScene(selected);
     });
   </script>
