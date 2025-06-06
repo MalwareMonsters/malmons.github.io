@@ -8,153 +8,45 @@
     @font-face {
       font-family: 'Terminal';
       src: url('./fonts/Terminal.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
     }
-
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      background-color: #111;
+      height: 100vh;
+      background-color: #727272;
+      color: white;
       font-family: 'Terminal', monospace;
-      color: white;
-    }
-
-    #container {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    .overlay-top, .overlay-bottom {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    .overlay-top {
-      top: 12px;
-    }
-
-    #logo-container img {
-      height: 50px;
-    }
-
-    #logo-container h1 {
-      margin: 10px 0 0 0;
-      font-size: 28px;
-      color: white;
-    }
-
-    .overlay-bottom {
-      bottom: 70px; /* lifted up further above gray bar */
-    }
-
-    #scene-selector {
-      margin-bottom: 12px;
-      pointer-events: auto;
-    }
-
-    #scene-selector select {
-      font-family: 'Terminal', monospace;
-      font-size: 16px;
-      padding: 6px 12px;
-      background-color: #222;
-      color: white;
-      border: 1px solid #555;
-      border-radius: 4px;
-    }
-
-    #sponsor {
-      font-size: 16px;
-      color: #000;
-      margin-top: 6px;
-      pointer-events: auto;
-    }
-
-    #sponsor a {
-      color: #1a73e8;
-      text-decoration: none;
-      display: inline-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 6px;
     }
-
-    #sponsor img {
-      height: 22px;
-      vertical-align: middle;
+    img {
+      max-width: 300px;
+      margin-bottom: 40px;
+    }
+    select {
+      font-family: 'Terminal', monospace;
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #111;
+      color: white;
+      border: 2px solid #888;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <iframe id="malmonFrame" allow="autoplay; fullscreen; vr" allowfullscreen></iframe>
-
-    <!-- Top Overlay -->
-    <div class="overlay-top" id="logo-container">
-      <img src="malmonslogo.png" alt="Malmons Logo">
-      <h1 id="malmonTitle">Malmons</h1>
-    </div>
-
-    <!-- Scene Selector & Sponsor (Bottom Overlay Grouped) -->
-    <div class="overlay-bottom">
-      <div id="scene-selector">
-        <select id="sceneDropdown">
-          <option value="gh0st_rat">Gh0st RAT</option>
-          <option value="flame">Flame</option>
-        </select>
-      </div>
-      <div id="sponsor">
-        Sponsored by 
-        <a href="https://malwarevillage.org" target="_blank">
-          <img src="malware-village-logo.png" alt="Malware Village Logo"/>
-          Malware Village
-        </a>
-      </div>
-    </div>
-  </div>
-
+  <img src="./malmonslogo.png" alt="Malmons Logo">
+  <select id="malmonPicker">
+    <option disabled selected>Pick a Malmons</option>
+    <option value="https://stuxnet.malmons.world">Stuxnet</option>
+    <option value="https://gh0st_rat.malmons.world">Gh0st RAT</option>
+    <option value="https://flame.malmons.world">Flame</option>
+  </select>
   <script>
-    const iframe = document.getElementById('malmonFrame');
-    const title = document.getElementById('malmonTitle');
-    const dropdown = document.getElementById('sceneDropdown');
-
-    const scenes = {
-      gh0st_rat: {
-        src: "https://playcanv.as/b/3f3c389e",
-        title: "The Gh0st RAT Malmons"
-      },
-      flame: {
-        src: "https://playcanv.as/b/458a3b3c",
-        title: "The Flame Malmons"
-      }
-    };
-
-    function loadScene(key) {
-      iframe.src = scenes[key].src;
-      title.textContent = scenes[key].title;
-    }
-
-    const initialPath = window.location.pathname.toLowerCase().replace('/', '');
-    const initialScene = scenes[initialPath] ? initialPath : 'gh0st_rat';
-    dropdown.value = initialScene;
-    loadScene(initialScene);
-
-    dropdown.addEventListener('change', () => {
-      const selected = dropdown.value;
-      history.replaceState({}, '', '/' + selected);
-      loadScene(selected);
+    document.getElementById('malmonPicker').addEventListener('change', function () {
+      window.location.href = this.value;
     });
   </script>
 </body>
