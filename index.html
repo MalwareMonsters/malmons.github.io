@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,46 +12,39 @@
 
     html, body {
       margin: 0;
-      padding: 0;
       height: 100%;
       background-color: #222;
-      font-family: 'Terminal', monospace;
-      color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      font-family: 'Terminal', monospace;
+      color: white;
     }
 
     img {
-      height: 100px;
-      margin-bottom: 20px;
+      width: 220px;
+      margin-bottom: 30px;
     }
 
     select {
       font-family: 'Terminal', monospace;
-      font-size: 18px;
-      padding: 10px 20px;
-      background-color: #333;
+      font-size: 20px;
+      padding: 10px;
+      background-color: #111;
       color: white;
-      border: 1px solid #666;
-      border-radius: 6px;
+      border: 2px solid #fff;
+      border-radius: 5px;
     }
   </style>
 </head>
 <body>
-  <img src="./assets/malmonslogo.png" alt="Malmons Logo">
-  <select onchange="handleSelect(this.value)">
-    <option disabled selected>Pick a Malmons</option>
+  <img src="./malmonslogo.png" alt="Malmons Logo">
+  <select onchange="location = this.value;">
+    <option value="">Pick a Malmons</option>
     <option value="/gh0st_rat/">Gh0st RAT</option>
     <option value="/flame/">Flame</option>
     <option value="/stuxnet/">Stuxnet</option>
   </select>
-
-  <script>
-    function handleSelect(path) {
-      window.location.href = path;
-    }
-  </script>
 </body>
 </html>

@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gh0st RAT - Malmons</title>
+  <title>Stuxnet Malmon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @font-face {
@@ -11,7 +12,6 @@
 
     html, body {
       margin: 0;
-      padding: 0;
       height: 100%;
       background-color: #111;
       font-family: 'Terminal', monospace;
@@ -22,6 +22,7 @@
       width: 100%;
       height: 100%;
       position: relative;
+      overflow: hidden;
     }
 
     iframe {
@@ -30,20 +31,13 @@
       border: none;
     }
 
-    .overlay {
+    .overlay-top {
       position: absolute;
+      top: 12px;
       width: 100%;
       text-align: center;
       z-index: 10;
       pointer-events: none;
-    }
-
-    .top-overlay {
-      top: 12px;
-    }
-
-    .bottom-overlay {
-      bottom: 80px;
     }
 
     #logo-container img {
@@ -53,12 +47,21 @@
     #logo-container h1 {
       margin: 10px 0 0;
       font-size: 28px;
+      color: white;
+    }
+
+    .overlay-bottom {
+      position: absolute;
+      bottom: 70px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      pointer-events: none;
     }
 
     #sponsor {
-      font-size: 18px;
+      font-size: 16px;
       color: #000;
-      margin-top: 6px;
       pointer-events: auto;
     }
 
@@ -72,7 +75,6 @@
 
     #sponsor img {
       height: 22px;
-      vertical-align: middle;
     }
   </style>
 </head>
@@ -80,15 +82,15 @@
   <div id="container">
     <iframe src="https://playcanv.as/b/3f3c389e" allow="autoplay; fullscreen; vr" allowfullscreen></iframe>
 
-    <div class="overlay top-overlay" id="logo-container">
-      <img src="../assets/malmonslogo.png" alt="Malmons Logo">
-      <h1>The Gh0st RAT Malmons</h1>
+    <div class="overlay-top" id="logo-container">
+      <img src="../malmonslogo.png" alt="Malmons Logo">
+      <h1>The Gh0st Rat Malmons</h1>
     </div>
 
-    <div class="overlay bottom-overlay" id="sponsor">
+    <div class="overlay-bottom" id="sponsor">
       Sponsored by 
       <a href="https://malwarevillage.org" target="_blank">
-        <img src="../assets/malware-village-logo.png" alt="Malware Village Logo"/>
+        <img src="../malware-village-logo.png" alt="Malware Village Logo"/>
         Malware Village
       </a>
     </div>
