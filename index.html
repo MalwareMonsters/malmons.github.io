@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,45 +10,49 @@
       font-family: 'Terminal';
       src: url('./fonts/Terminal.woff') format('woff');
     }
-    body {
+
+    html, body {
       margin: 0;
       padding: 0;
-      height: 100vh;
-      background-color: #727272;
-      color: white;
+      height: 100%;
+      background-color: #222;
       font-family: 'Terminal', monospace;
+      color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
+
     img {
-      max-width: 300px;
-      margin-bottom: 40px;
+      height: 100px;
+      margin-bottom: 20px;
     }
+
     select {
       font-family: 'Terminal', monospace;
       font-size: 18px;
       padding: 10px 20px;
-      background-color: #111;
+      background-color: #333;
       color: white;
-      border: 2px solid #888;
+      border: 1px solid #666;
       border-radius: 6px;
     }
   </style>
 </head>
 <body>
-  <img src="./malmonslogo.png" alt="Malmons Logo">
-  <select id="malmonPicker">
+  <img src="./assets/malmonslogo.png" alt="Malmons Logo">
+  <select onchange="handleSelect(this.value)">
     <option disabled selected>Pick a Malmons</option>
-    <option value="http://stuxnet.malmons.world">Stuxnet</option>
-    <option value="http://gh0st_rat.malmons.world">Gh0st RAT</option>
-    <option value="http://flame.malmons.world">Flame</option>
+    <option value="/gh0st_rat/">Gh0st RAT</option>
+    <option value="/flame/">Flame</option>
+    <option value="/stuxnet/">Stuxnet</option>
   </select>
+
   <script>
-    document.getElementById('malmonPicker').addEventListener('change', function () {
-      window.location.href = this.value;
-    });
+    function handleSelect(path) {
+      window.location.href = path;
+    }
   </script>
 </body>
 </html>
