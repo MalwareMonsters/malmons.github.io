@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rhadamanthys Malmons</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: 'Terminal';
+      src: url('../fonts/Terminal.woff') format('woff');
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background-color: #111;
+      font-family: 'Terminal', monospace;
+      color: white;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .overlay-top {
+      position: absolute;
+      top: 12px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    #logo-container img {
+      height: 50px;
+    }
+
+    #logo-container h1 {
+      margin: 10px 0 0;
+      font-size: 28px;
+      color: white;
+    }
+
+    .overlay-bottom {
+      position: absolute;
+      bottom: 70px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    #sponsor {
+      font-size: 16px;
+      color: #000;
+      pointer-events: auto;
+    }
+
+    #sponsor a {
+      color: #1a73e8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #sponsor img {
+      height: 22px;
+    }
+
+    #container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .square-img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div style="text-align: center;">
+      <img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/15_Rhadamanthys.gif" class="square-img"/>
+      <div>Coming Soon...</div>
+    </div>
+
+    <div class="overlay-top" id="logo-container">
+      <img src="../malmonslogo.png" alt="Malmons Logo">
+      <h1>Rhadamanthys</h1>
+    </div>
+
+    <div class="overlay-bottom" id="sponsor">
+      Sponsored by 
+      <a href="https://malwarevillage.org" target="_blank">
+        <img src="../malware-village-logo.png" alt="Malware Village Logo"/>
+        Malware Village
+      </a>
+    </div>
+  </div>
+</body>
+</html>
