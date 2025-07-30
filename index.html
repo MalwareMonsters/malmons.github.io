@@ -11,7 +11,6 @@
       src: url('https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/fonts/Terminal.woff') format('woff');
     }
 
-
     html, body {
       margin: 0;
       padding: 0;
@@ -21,15 +20,13 @@
     }
 
     .main-container {
-      max-width: 1000px;
-      margin: 0 auto;
+      text-align: center;
       padding: 40px 20px;
     }
 
     h1 {
-      text-align: center;
       font-size: 28px;
-      margin-bottom: 40px;
+      margin: 40px 0 20px;
     }
 
     img {
@@ -37,20 +34,25 @@
       margin-bottom: 30px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .table-wrapper {
+      display: inline-block;
       margin-bottom: 40px;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 0 auto;
     }
 
     td {
       text-align: center;
+      vertical-align: top;
       padding: 15px;
     }
 
     .square-img {
-      width: 100px;
-      height: 100px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       display: block;
       margin: 0 auto 10px;
@@ -92,98 +94,86 @@
 </head>
 <body>
   <div class="main-container">
-    <div style="text-align: center;">
-      <img src="./malmonslogo.png" alt="Malmons Logo">
+    <img src="./malmonslogo.png" alt="Malmons Logo">
+
+    <h1>Generation 1 Malmons</h1>
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <td><a class="malmon-link" href="/gaboongrabber/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/1_GabooonGrabber.gif" class="square-img"/>GabooonGrabber</a></td>
+          <td><a class="malmon-link" href="/raspberry_robin/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/2_Raspberry_Robin.gif" class="square-img"/>Raspberry Robin</a></td>
+          <td><a class="malmon-link" href="/noodle_rat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/3_Noodle_RAT.gif" class="square-img"/>Noodle RAT</a></td>
+          <td><a class="malmon-link" href="/litterdrifter/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/5_LitterDrifter.gif" class="square-img"/>LitterDrifter</a></td>
+          <td><a class="malmon-link" href="/gh0st_rat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/6_Gh0st_RAT.gif" class="square-img"/>Gh0st RAT</a></td>
+          <td><a class="malmon-link" href="/stuxnet/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/4_Stuxnet.gif" class="square-img"/>Stuxnet</a></td>
+          <td><a class="malmon-link" href="/fakebat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/7_FakeBat.gif" class="square-img"/>FakeBat</a></td>
+          <td><a class="malmon-link" href="/poisonivy/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/8_PoisonIvy.gif" class="square-img"/>PoisonIvy</a></td>
+        </tr>
+        <tr>
+          <td><a class="malmon-link" href="/wannacry/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/9_WannaCry.gif" class="square-img"/>WannaCry</a></td>
+          <td><a class="malmon-link" href="/slammer/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/10_Slammer.gif" class="square-img"/>Slammer</a></td>
+          <td><a class="malmon-link" href="/petya/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/11_Petya.gif" class="square-img"/>Petya</a></td>
+          <td><a class="malmon-link" href="/notpetya/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/12_NotPetya.gif" class="square-img"/>NotPetya</a></td>
+          <td><a class="malmon-link" href="/iloveyou/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/13_ILOVEYOU.gif" class="square-img"/>ILOVEYOU</a></td>
+          <td><a class="malmon-link" href="/sugargh0st_rat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/14_SugarGh0st_RAT.gif" class="square-img"/>SugarGh0st RAT</a></td>
+          <td><a class="malmon-link" href="/rhadamanthys/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/15_Rhadamanthys.gif" class="square-img"/>Rhadamanthys</a></td>
+          <td><a class="malmon-link" href="/flame/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/16_Flame.gif" class="square-img"/>Flame</a></td>
+        </tr>
+        <tr>
+          <td><a class="malmon-link" href="/bfod/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/17_BFOD.gif" class="square-img"/>BFOD</a></td>
+          <td><a class="malmon-link" href="/olympic_destroyer/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/18_Olympic_Destroyer.gif" class="square-img"/>Olympic Destroyer</a></td>
+          <td><a class="malmon-link" href="/sick_anubis/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/19_Sick_Anubis.gif" class="square-img"/>Sick Anubis</a></td>
+          <td><a class="malmon-link" href="/whitesnake/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/20_WhiteSnake.gif" class="square-img"/>WhiteSnake</a></td>
+          <td><a class="malmon-link" href="/trickbot/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/21_TrickBot.gif" class="square-img"/>TrickBot</a></td>
+          <td><a class="malmon-link" href="/raccoon/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/22_Raccoon.gif" class="square-img"/>Raccoon</a></td>
+          <td><a class="malmon-link" href="/bootkitty/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/23_BootKitty.gif" class="square-img"/>BootKitty</a></td>
+          <td><a class="malmon-link" href="/warmcookie/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/24_WarmCookie.gif" class="square-img"/>WarmCookie</a></td>
+        </tr>
+        <tr>
+          <td><a class="malmon-link" href="/purplefox/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/25_PurpleFox.gif" class="square-img"/>PurpleFox</a></td>
+          <td><a class="malmon-link" href="/blackenergy/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/26_BlackEnergy.gif" class="square-img"/>BlackEnergy</a></td>
+          <td><a class="malmon-link" href="/pegasus/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/27_Pegasus.gif" class="square-img"/>Pegasus</a></td>
+          <td><a class="malmon-link" href="/sub7/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/28_Sub7.gif" class="square-img"/>Sub7</a></td>
+          <td><a class="malmon-link" href="/socgholish/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/29_SocGholish.gif" class="square-img"/>SocGholish</a></td>
+          <td><a class="malmon-link" href="/darkpulsar/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/30_DarkPulsar.gif" class="square-img"/>DarkPulsar</a></td>
+          <td><a class="malmon-link" href="/industroyer/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/31_Industroyer.gif" class="square-img"/>Industroyer</a></td>
+          <td><a class="malmon-link" href="/nimda/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/32_Nimda.gif" class="square-img"/>Nimda</a></td>
+        </tr>
+      </table>
     </div>
-    
 
-<h1>Generation 1 Malmons</h1>
-<table>
-  <tr>
-    <td><a class="malmon-link" href="/gaboongrabber/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/1_GabooonGrabber.gif" class="square-img"/><span>GabooonGrabber </span></td>
-    <td><a class="malmon-link" href="/raspberry_robin/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/2_Raspberry_Robin.gif" class="square-img"/><span>Raspberry Robin </span></td>
-    <td><a class="malmon-link" href="/noodle_rat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/3_Noodle_RAT.gif" class="square-img"/><span>Noodle RAT </span></td>
-    <td><a class="malmon-link" href="/litterdrifter/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/5_LitterDrifter.gif" class="square-img"/><span>LitterDrifter </span></td>
-      <td><a class="malmon-link" href="/gh0st_rat/"><a class="malmon-link" href="/gh0st_rat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/6_Gh0st_RAT.gif" class="square-img"/>Gh0st RAT</a></td>
-      <td><a class="malmon-link" href="/stuxnet/"><a class="malmon-link" href="/stuxnet/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/4_Stuxnet.gif" class="square-img"/>Stuxnet</a></td>
-      <td><a class="malmon-link" href="/fakebat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/7_FakeBat.gif" class="square-img"/><span>FakeBat </span></td>
-        <td><a class="malmon-link" href="/poisonivy/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/8_PoisonIvy.gif" class="square-img"/><span>PoisonIvy </span></td>
-
-    </tr>
-  <tr>
-    <td><a class="malmon-link" href="/wannacry/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/9_WannaCry.gif" class="square-img"/><span>WannaCry </span></td>
-    <td><a class="malmon-link" href="/slammer/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/10_Slammer.gif" class="square-img"/><span>Slammer </span></td>
-    <td><a class="malmon-link" href="/petya/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/11_Petya.gif" class="square-img"/><span>Petya </span></td>
-    <td><a class="malmon-link" href="/notpetya/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/12_NotPetya.gif" class="square-img"/><span>NotPetya </span></td>
-    <td><a class="malmon-link" href="/iloveyou/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/13_ILOVEYOU.gif" class="square-img"/><span>ILOVEYOU </span></td>
-    <td><a class="malmon-link" href="/sugargh0st_rat/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/14_SugarGh0st_RAT.gif" class="square-img"/><span>SugarGh0st RAT </span></td>
-      <td><a class="malmon-link" href="/rhadamanthys/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/15_Rhadamanthys.gif" class="square-img"/><span>Rhadamanthys </span></td>
-        <td><a class="malmon-link" href="/flame/"><a class="malmon-link" href="/flame/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/16_Flame.gif" class="square-img"/>Flame</a></td>
-
-    </tr>
-  <tr>
-      <td><a class="malmon-link" href="/bfod/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/17_BFOD.gif" class="square-img"/><span>BFOD </span></td>
-    <td><a class="malmon-link" href="/olympic_destroyer/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/18_Olympic_Destroyer.gif" class="square-img"/><span>Olympic Destroyer </span></td>
-    <td><a class="malmon-link" href="/sick_anubis/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/19_Sick_Anubis.gif" class="square-img"/><span>Sick Anubis </span></td>
-      <td><a class="malmon-link" href="/whitesnake/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/20_WhiteSnake.gif" class="square-img"/><span>WhiteSnake </span></td>
-        <td><a class="malmon-link" href="/trickbot/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/21_TrickBot.gif" class="square-img"/><span>TrickBot </span></td>
-          <td><a class="malmon-link" href="/raccoon/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/22_Raccoon.gif" class="square-img"/><span>Raccoon </span></td>
-            <td><a class="malmon-link" href="/bootkitty/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/23_BootKitty.gif" class="square-img"/><span>BootKitty </span></td>
-              <td><a class="malmon-link" href="/warmcookie/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/24_WarmCookie.gif" class="square-img"/><span>WarmCookie </span></td>
-               
-    </tr>
-  <tr>
- <td><a class="malmon-link" href="/purplefox/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/25_PurpleFox.gif" class="square-img"/><span>PurpleFox </span></td>
-          <td><a class="malmon-link" href="/blackenergy/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/26_BlackEnergy.gif" class="square-img"/><span>BlackEnergy </span></td>
-            <td><a class="malmon-link" href="/pegasus/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/27_Pegasus.gif" class="square-img"/><span>Pegasus </span></td>
-              <td><a class="malmon-link" href="/sub7/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/28_Sub7.gif" class="square-img"/><span>Sub7 </span></td>
-                <td><a class="malmon-link" href="/socgholish/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/29_SocGholish.gif" class="square-img"/><span>SocGholish </span></td>
-                  <td><a class="malmon-link" href="/darkpulsar/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/30_DarkPulsar.gif" class="square-img"/><span>DarkPulsar </span></td>
-                    <td><a class="malmon-link" href="/industroyer/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/31_Industroyer.gif" class="square-img"/><span>Industroyer </span></td>
-                      <td><a class="malmon-link" href="/nimda/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_1/32_Nimda.gif" class="square-img"/><span>Nimda </span></td>
-                      
-    </tr>
-  <tr>
-
-  </table>
-<table>
     <h1>Generation 2 Malmons</h1>
-
-   <td><a class="malmon-link" href="/wirelurker/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_keynotes/1_WireLurker.gif" class="square-img"/><span>WireLurker </span></td>
-          <td><a class="malmon-link" href="/code_red/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_keynotes/2_Code_Red.gif" class="square-img"/><span>Code Red </span></td>
-            <td><a class="malmon-link" href="/lockbit/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_keynotes/3_LockBit.gif" class="square-img"/><span>LockBit </span></td>
-              <td><a class="malmon-link" href="/qrlog/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/1_QRLog.gif" class="square-img"/><span>QRLog </span></td>
-                <td><a class="malmon-link" href="/zebloader/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/2_ZebLoader.gif" class="square-img"/><span>ZebLoader </span></td>
-                  <td><a class="malmon-link" href="/exotickler/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/3_ExoTickler.gif" class="square-img"/><span>ExoTickler </span></td>
-                    <td><a class="malmon-link" href="/maliffic/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/4_Maliffic.gif" class="square-img"/><span>Malicious Traffic </span></td>
-                <td><a class="malmon-link" href="/triton/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/5_Triton.gif" class="square-img"/><span>Triton </span></td>
-                  
-          </tr>
-  <tr>
-
-    <td></td>
-    <td></td>
-<td><a class="malmon-link" href="/flubot/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/6_FluBot.gif" class="square-img"/><span>FluBot </span></td>
-          <td><a class="malmon-link" href="/privateloader/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/7_PrivateLoader.gif" class="square-img"/><span>PrivateLoader</span></td>
-            <td><a class="malmon-link" href="/winnti/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/8_Winnti.gif" class="square-img"/><span>Winnti</span></td>
-
-      </tr>
-
-</table>
-
+    <div class="table-wrapper">
+      <table>
+        <tr>
+          <td><a class="malmon-link" href="/wirelurker/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_keynotes/1_WireLurker.gif" class="square-img"/>WireLurker</a></td>
+          <td><a class="malmon-link" href="/code_red/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_keynotes/2_Code_Red.gif" class="square-img"/>Code Red</a></td>
+          <td><a class="malmon-link" href="/lockbit/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_keynotes/3_LockBit.gif" class="square-img"/>LockBit</a></td>
+          <td><a class="malmon-link" href="/qrlog/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/1_QRLog.gif" class="square-img"/>QRLog</a></td>
+          <td><a class="malmon-link" href="/zebloader/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/2_ZebLoader.gif" class="square-img"/>ZebLoader</a></td>
+          <td><a class="malmon-link" href="/exotickler/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/3_ExoTickler.gif" class="square-img"/>ExoTickler</a></td>
+          <td><a class="malmon-link" href="/maliffic/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/4_Maliffic.gif" class="square-img"/>Malicious Traffic</a></td>
+          <td><a class="malmon-link" href="/triton/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/5_Triton.gif" class="square-img"/>Triton</a></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><a class="malmon-link" href="/flubot/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/6_FluBot.gif" class="square-img"/>FluBot</a></td>
+          <td><a class="malmon-link" href="/privateloader/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/7_PrivateLoader.gif" class="square-img"/>PrivateLoader</a></td>
+          <td><a class="malmon-link" href="/winnti/"><img src="https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/gen_2/8_Winnti.gif" class="square-img"/>Winnti</a></td>
+        </tr>
+      </table>
+    </div>
 
     <div class="download-link">
       <a href="https://github.com/LambdaMamba/MalwareMonsters" target="_blank">Download the Malmons aka Malware Monsters GIFs</a>
     </div>
-
     <div class="download-link">
       <a href="https://www.youtube.com/watch?v=VS4MI6ULBug&list=PLfl8PlLIW-41vTV5jS7KsyyH-o2m2B9vY" target="_blank">View the Malmons Creation Process by Lena</a>
     </div>
-
     <div class="download-link">
       <a href="https://malwarevillage.myshopify.com/" target="_blank">Get Malmons Merch</a>
     </div>
-
 
     <div class="footer">
       Malmons aka Malware Monsters © 2025 Lena Yu aka LambdaMamba. All rights reserved.
