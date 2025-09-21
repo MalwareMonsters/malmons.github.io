@@ -19,9 +19,35 @@
       color: white;
     }
 
+    /* Top menu bar styles */
+    .menu-bar {
+      width: 100%;
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      position: fixed;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .menu-bar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 16px;
+      transition: color 0.2s ease-in-out;
+    }
+
+    .menu-bar a:hover {
+      color: #1a73e8;
+      text-decoration: underline;
+    }
+
     .main-container {
       text-align: center;
-      padding: 40px 20px;
+      padding: 80px 20px 40px; /* Padding top increased for menu */
     }
 
     h1 {
@@ -93,6 +119,17 @@
   </style>
 </head>
 <body>
+
+  <!-- Menu Bar -->
+  <div class="menu-bar">
+    <a href="https://malmons.world/">Top</a>
+    <a href="https://malmons.world/about">About</a>
+    <a href="https://malmons.world/news">News</a>
+    <a href="https://malmons.world/games">Games</a>
+    <a href="https://malwarevillage.myshopify.com/">Merch</a>
+    <a href="https://buymeacoffee.com/malmons_world">Donate</a>
+  </div>
+
   <div class="main-container">
     <img src="./malmonslogo.png" alt="Malmons Logo">
 
@@ -173,9 +210,6 @@
     </div>
     <div class="download-link">
       <a href="https://www.youtube.com/watch?v=VS4MI6ULBug&list=PLfl8PlLIW-41vTV5jS7KsyyH-o2m2B9vY" target="_blank">View the Malmons Creation Process by Lena</a>
-    </div>
-    <div class="download-link">
-      <a href="https://malwarevillage.myshopify.com/" target="_blank">Get Malmons Merch</a>
     </div>
 
 
