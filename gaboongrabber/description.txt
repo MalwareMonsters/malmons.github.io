@@ -1,0 +1,2 @@
+GaboonGrabber
+GaboonGrabber is a .NET-based malware that extracts embedded resources to deploy multiple payloads. It disguises itself as legitimate software and uses steganography to hide its actions.
