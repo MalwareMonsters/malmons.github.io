@@ -1,0 +1,3 @@
+Stuxnet
+Stuxnet is a sophisticated worm targeting industrial control systems, especially Siemens PLCs.
+It spreads via USB and network shares, exploiting zero-days to alter centrifuge operations while masking signs of sabotage. Stuxnet was the first known malware to cause real-world physical damage.
