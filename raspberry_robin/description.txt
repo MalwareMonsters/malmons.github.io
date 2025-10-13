@@ -1,0 +1,2 @@
+Raspberry Robin
+Raspberry Robin is a worm that spreads primarily through infected USB drives and external media. It leverages Windows shortcuts and legitimate tools like msiexec.exe to retrieve and execute payloads from compromised domains. Often serving as an initial access vector for ransomware operations, Raspberry Robin is known for its persistence, obfuscation techniques, and evolving command-and-control infrastructure.
