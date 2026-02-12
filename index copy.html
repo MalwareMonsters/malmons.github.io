@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Malmons World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @font-face {
+      font-family: 'Terminal';
+      src: url('./fonts/Terminal.woff') format('woff');
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background-color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Terminal', monospace;
+      color: white;
+    }
+
+    img {
+      width: 220px;
+      margin-bottom: 30px;
+    }
+
+    select {
+      font-family: 'Terminal', monospace;
+      font-size: 20px;
+      padding: 10px;
+      background-color: #111;
+      color: white;
+      border: 2px solid #fff;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <img src="./malmonslogo.png" alt="Malmons Logo">
+  <select onchange="location = this.value;">
+    <option value="">Pick a Malmons</option>
+    <option value="/gh0st_rat/">Gh0st RAT</option>
+    <option value="/flame/">Flame</option>
+    <option value="/stuxnet/">Stuxnet</option>
+  </select>
+</body>
+</html>
