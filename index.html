@@ -5,10 +5,16 @@
   <title>Malmons World</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="/malmonslogo.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     @font-face {
       font-family: 'Terminal';
       src: url('https://raw.githubusercontent.com/LambdaMamba/MalwareMonsters/main/fonts/Terminal.woff') format('woff');
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     html, body {
@@ -19,15 +25,22 @@
       color: white;
     }
 
-    /* Top menu bar styles */
+    body {
+      overflow-x: hidden;
+    }
+
     .menu-bar {
       width: 100%;
       background-color: #111;
       display: flex;
       justify-content: center;
-      padding: 10px 0;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding: 12px 16px;
       position: fixed;
       top: 0;
+      left: 0;
       z-index: 999;
       box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
@@ -35,7 +48,6 @@
     .menu-bar a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
       font-size: 16px;
       transition: color 0.2s ease-in-out;
     }
@@ -47,52 +59,86 @@
 
     .main-container {
       text-align: center;
-      padding: 80px 20px 40px; /* Padding top increased for menu */
-    }
-
-    h1 {
-      font-size: 28px;
-      margin: 40px 0 20px;
-    }
-
-    img {
-      width: 400px;
-      margin-bottom: 30px;
-    }
-
-    .table-wrapper {
-      display: inline-block;
-      margin-bottom: 40px;
-    }
-
-    table {
-      border-collapse: collapse;
+      padding: 110px 20px 40px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
-    td {
+    .logo {
+      width: min(400px, 90vw);
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: clamp(24px, 4vw, 28px);
+      margin: 40px 0 20px;
+    }
+
+    h2 {
+      font-size: clamp(18px, 3.5vw, 24px);
+      line-height: 1.4;
+      margin: 20px auto;
+      max-width: 900px;
+    }
+
+    .social-links {
       text-align: center;
-      vertical-align: top;
-      padding: 15px;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: clamp(24px, 4vw, 28px);
+      transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+      display: inline-block;
+    }
+
+    .social-links a:hover {
+      color: #1a73e8;
+      transform: scale(1.15);
+    }
+
+    .kickstarter-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 10px;
+    }
+
+    .kickstarter-wrapper iframe {
+      width: min(100%, 220px);
+      max-width: 220px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      width: 100%;
+      margin: 0 auto 40px;
+      max-width: 1200px;
+    }
+
+    .malmon-card {
+      text-align: center;
     }
 
     .square-img {
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       display: block;
       margin: 0 auto 10px;
       border: none;
     }
 
-    .malmon-link {
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-    }
-
-    .malmon-link:hover {
-      text-decoration: underline;
+    .malmon-name {
+      font-size: clamp(14px, 2vw, 16px);
+      line-height: 1.3;
+      word-break: break-word;
     }
 
     .footer {
@@ -100,48 +146,63 @@
       font-size: 14px;
       color: white;
       margin-top: 40px;
+      line-height: 1.6;
+      padding: 0 10px;
     }
 
     .download-link {
       text-align: center;
       margin-top: 20px;
-      font-size: 16px;
+      font-size: clamp(14px, 2vw, 16px);
+      padding: 0 10px;
     }
 
     .download-link a {
       color: #1a73e8;
       text-decoration: none;
+      word-break: break-word;
     }
 
     .download-link a:hover {
       text-decoration: underline;
     }
 
-    .social-links {
-  text-align: center;
-  margin-top: 30px;
-}
+    @media (max-width: 768px) {
+      .main-container {
+        padding-top: 130px;
+      }
 
-.social-links a {
-  color: white;
-  margin: 0 12px;
-  font-size: 28px;
-  transition: transform 0.2s ease-in-out;
-}
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 16px;
+      }
+    }
 
-.social-links a:hover {
-  color: #1a73e8;
-  transform: scale(1.2);
-}
+    @media (max-width: 480px) {
+      .menu-bar {
+        gap: 8px 14px;
+        padding: 10px 12px;
+      }
 
+      .menu-bar a {
+        font-size: 14px;
+      }
 
+      .main-container {
+        padding-top: 140px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+    }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
 
-  <!-- Menu Bar -->
   <div class="menu-bar">
     <a href="https://malmons.world/">Top</a>
     <a href="https://malmons.world/about">About</a>
@@ -150,7 +211,90 @@
   </div>
 
   <div class="main-container">
-    <img src="./malmonslogo.png" alt="Malmons Logo">
+    <img src="./malmonslogo.png" alt="Malmons Logo" class="logo">
+
+
+    <h2>Malmons USB Keychains Pre-orders now open on Kickstarter Pledge Manager!</h2>
+
+    <div class="kickstarter-wrapper">
+      <iframe
+        src="https://www.kickstarter.com/projects/lambdamamba/malmons-aka-malware-monsters-usb-keychains/widget/card.html?v=2"
+        width="220"
+        height="420"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+
+
+    <h1>Generation 1 Malmons</h1>
+    <div class="gallery">
+      <div class="malmon-card"><img src="/gaboongrabber/anime.gif" class="square-img" alt="GabooonGrabber"><div class="malmon-name">GabooonGrabber</div></div>
+      <div class="malmon-card"><img src="/raspberry_robin/anime.gif" class="square-img" alt="Raspberry Robin"><div class="malmon-name">Raspberry Robin</div></div>
+      <div class="malmon-card"><img src="/noodle_rat/anime.gif" class="square-img" alt="Noodle RAT"><div class="malmon-name">Noodle RAT</div></div>
+      <div class="malmon-card"><img src="/litterdrifter/anime.gif" class="square-img" alt="LitterDrifter"><div class="malmon-name">LitterDrifter</div></div>
+      <div class="malmon-card"><img src="/gh0st_rat/anime.gif" class="square-img" alt="Gh0st RAT"><div class="malmon-name">Gh0st RAT</div></div>
+      <div class="malmon-card"><img src="/stuxnet/anime.gif" class="square-img" alt="Stuxnet"><div class="malmon-name">Stuxnet</div></div>
+      <div class="malmon-card"><img src="/fakebat/anime.gif" class="square-img" alt="FakeBat"><div class="malmon-name">FakeBat</div></div>
+      <div class="malmon-card"><img src="/poisonivy/anime.gif" class="square-img" alt="PoisonIvy"><div class="malmon-name">PoisonIvy</div></div>
+
+      <div class="malmon-card"><img src="/wannacry/anime.gif" class="square-img" alt="WannaCry"><div class="malmon-name">WannaCry</div></div>
+      <div class="malmon-card"><img src="/slammer/anime.gif" class="square-img" alt="Slammer"><div class="malmon-name">Slammer</div></div>
+      <div class="malmon-card"><img src="/petya/anime.gif" class="square-img" alt="Petya"><div class="malmon-name">Petya</div></div>
+      <div class="malmon-card"><img src="/notpetya/anime.gif" class="square-img" alt="NotPetya"><div class="malmon-name">NotPetya</div></div>
+      <div class="malmon-card"><img src="/iloveyou/anime.gif" class="square-img" alt="ILOVEYOU"><div class="malmon-name">ILOVEYOU</div></div>
+      <div class="malmon-card"><img src="/sugargh0st_rat/anime.gif" class="square-img" alt="SugarGh0st RAT"><div class="malmon-name">SugarGh0st RAT</div></div>
+      <div class="malmon-card"><img src="/rhadamanthys/anime.gif" class="square-img" alt="Rhadamanthys"><div class="malmon-name">Rhadamanthys</div></div>
+      <div class="malmon-card"><img src="/flame/anime.gif" class="square-img" alt="Flame"><div class="malmon-name">Flame</div></div>
+
+      <div class="malmon-card"><img src="/bfod/anime.gif" class="square-img" alt="BFOD"><div class="malmon-name">BFOD</div></div>
+      <div class="malmon-card"><img src="/olympic_destroyer/anime.gif" class="square-img" alt="Olympic Destroyer"><div class="malmon-name">Olympic Destroyer</div></div>
+      <div class="malmon-card"><img src="/sick_anubis/anime.gif" class="square-img" alt="Sick Anubis"><div class="malmon-name">Sick Anubis</div></div>
+      <div class="malmon-card"><img src="/whitesnake/anime.gif" class="square-img" alt="WhiteSnake"><div class="malmon-name">WhiteSnake</div></div>
+      <div class="malmon-card"><img src="/trickbot/anime.gif" class="square-img" alt="TrickBot"><div class="malmon-name">TrickBot</div></div>
+      <div class="malmon-card"><img src="/raccoon/anime.gif" class="square-img" alt="Raccoon"><div class="malmon-name">Raccoon</div></div>
+      <div class="malmon-card"><img src="/bootkitty/anime.gif" class="square-img" alt="BootKitty"><div class="malmon-name">BootKitty</div></div>
+      <div class="malmon-card"><img src="/warmcookie/anime.gif" class="square-img" alt="WarmCookie"><div class="malmon-name">WarmCookie</div></div>
+
+      <div class="malmon-card"><img src="/purplefox/anime.gif" class="square-img" alt="PurpleFox"><div class="malmon-name">PurpleFox</div></div>
+      <div class="malmon-card"><img src="/blackenergy/anime.gif" class="square-img" alt="BlackEnergy"><div class="malmon-name">BlackEnergy</div></div>
+      <div class="malmon-card"><img src="/pegasus/anime.gif" class="square-img" alt="Pegasus"><div class="malmon-name">Pegasus</div></div>
+      <div class="malmon-card"><img src="/sub7/anime.gif" class="square-img" alt="Sub7"><div class="malmon-name">Sub7</div></div>
+      <div class="malmon-card"><img src="/socgholish/anime.gif" class="square-img" alt="SocGholish"><div class="malmon-name">SocGholish</div></div>
+      <div class="malmon-card"><img src="/darkpulsar/anime.gif" class="square-img" alt="DarkPulsar"><div class="malmon-name">DarkPulsar</div></div>
+      <div class="malmon-card"><img src="/industroyer/anime.gif" class="square-img" alt="Industroyer"><div class="malmon-name">Industroyer</div></div>
+      <div class="malmon-card"><img src="/nimda/anime.gif" class="square-img" alt="Nimda"><div class="malmon-name">Nimda</div></div>
+    </div>
+
+    <h1>Generation 2 Malmons</h1>
+    <div class="gallery">
+      <div class="malmon-card"><img src="/wirelurker/anime.gif" class="square-img" alt="WireLurker"><div class="malmon-name">WireLurker</div></div>
+      <div class="malmon-card"><img src="/code_red/anime.gif" class="square-img" alt="Code Red"><div class="malmon-name">Code Red</div></div>
+      <div class="malmon-card"><img src="/lockbit/anime.gif" class="square-img" alt="LockBit"><div class="malmon-name">LockBit</div></div>
+      <div class="malmon-card"><img src="/qrlog/anime.gif" class="square-img" alt="QRLog"><div class="malmon-name">QRLog</div></div>
+      <div class="malmon-card"><img src="/zloader/anime.gif" class="square-img" alt="ZLoader"><div class="malmon-name">ZLoader</div></div>
+      <div class="malmon-card"><img src="/exotickler/anime.gif" class="square-img" alt="ExoTickler"><div class="malmon-name">ExoTickler</div></div>
+      <div class="malmon-card"><img src="/maliffic/anime.gif" class="square-img" alt="Malicious Traffic"><div class="malmon-name">Malicious Traffic</div></div>
+      <div class="malmon-card"><img src="/triton/anime.gif" class="square-img" alt="Triton"><div class="malmon-name">Triton</div></div>
+
+      <div class="malmon-card"><img src="/flubot/anime.gif" class="square-img" alt="FluBot"><div class="malmon-name">FluBot</div></div>
+      <div class="malmon-card"><img src="/privateloader/anime.gif" class="square-img" alt="PrivateLoader"><div class="malmon-name">PrivateLoader</div></div>
+      <div class="malmon-card"><img src="/winnti/anime.gif" class="square-img" alt="Winnti"><div class="malmon-name">Winnti</div></div>
+      <div class="malmon-card"><img src="/lemonduck/anime.gif" class="square-img" alt="LemonDuck"><div class="malmon-name">LemonDuck</div></div>
+      <div class="malmon-card"><img src="/akairyu/anime.gif" class="square-img" alt="AkaiRyu"><div class="malmon-name">AkaiRyu</div></div>
+      <div class="malmon-card"><img src="/happy99/anime.gif" class="square-img" alt="Happy99"><div class="malmon-name">Happy99</div></div>
+      <div class="malmon-card"><img src="/sparkkitty/anime.gif" class="square-img" alt="SparkKitty"><div class="malmon-name">SparkKitty</div></div>
+    </div>
+
+
+    <div class="download-link">
+      <a href="https://github.com/LambdaMamba/MalwareMonsters" target="_blank">Download the Malmons aka Malware Monsters GIFs</a>
+    </div>
+
+    <div class="download-link">
+      <a href="https://www.youtube.com/watch?v=VS4MI6ULBug&list=PLfl8PlLIW-41vTV5jS7KsyyH-o2m2B9vY" target="_blank">View the Malmons Creation Process by Lena</a>
+    </div>
+
     <div class="social-links">
       <a href="http://instagram.com/malmons.world" target="_blank" aria-label="Instagram">
         <i class="fab fa-instagram" aria-hidden="true"></i>
@@ -165,106 +309,14 @@
         <i class="fab fa-twitter" aria-hidden="true"></i>
       </a>
     </div>
-
-    <h2>Malmons USB Keychains Pre-orders now open on Kickstarter Pledge Manager!</h2>
-    <iframe src="https://www.kickstarter.com/projects/lambdamamba/malmons-aka-malware-monsters-usb-keychains/widget/card.html?v=2" width="220" height="420" frameborder="0" scrolling="no"></iframe>
-   
-
-    <!-- <br> <br>
-    <h2>Malmons Trading Card Game Kickstart is now live!</h2>
-
-    <iframe src="https://www.kickstarter.com/projects/lambdamamba/malmons-trading-card-game/widget/card.html?v=2" width="220" height="420" frameborder="0" scrolling="no"></iframe>
- -->
-
-    <h1>Generation 1 Malmons</h1>
-    <div class="table-wrapper">
-      <table>
-        <tr>
-          <td><a class="malmon-link" href="/gaboongrabber/"><img src="/gaboongrabber/anime.gif" class="square-img"/>GabooonGrabber</a></td>
-          <td><a class="malmon-link" href="/raspberry_robin/"><img src="/raspberry_robin/anime.gif" class="square-img"/>Raspberry Robin</a></td>
-          <td><a class="malmon-link" href="/noodle_rat/"><img src="/noodle_rat/anime.gif" class="square-img"/>Noodle RAT</a></td>
-          <td><a class="malmon-link" href="/litterdrifter/"><img src="/litterdrifter/anime.gif" class="square-img"/>LitterDrifter</a></td>
-          <td><a class="malmon-link" href="/gh0st_rat/"><img src="/gh0st_rat/anime.gif" class="square-img"/>Gh0st RAT</a></td>
-          <td><a class="malmon-link" href="/stuxnet/"><img src="/stuxnet/anime.gif" class="square-img"/>Stuxnet</a></td>
-          <td><a class="malmon-link" href="/fakebat/"><img src="/fakebat/anime.gif" class="square-img"/>FakeBat</a></td>
-          <td><a class="malmon-link" href="/poisonivy/"><img src="/poisonivy/anime.gif" class="square-img"/>PoisonIvy</a></td>
-        </tr>
-        <tr>
-          <td><a class="malmon-link" href="/wannacry/"><img src="/wannacry/anime.gif" class="square-img"/>WannaCry</a></td>
-          <td><a class="malmon-link" href="/slammer/"><img src="/slammer/anime.gif" class="square-img"/>Slammer</a></td>
-          <td><a class="malmon-link" href="/petya/"><img src="/petya/anime.gif" class="square-img"/>Petya</a></td>
-          <td><a class="malmon-link" href="/notpetya/"><img src="/notpetya/anime.gif" class="square-img"/>NotPetya</a></td>
-          <td><a class="malmon-link" href="/iloveyou/"><img src="/iloveyou/anime.gif" class="square-img"/>ILOVEYOU</a></td>
-          <td><a class="malmon-link" href="/sugargh0st_rat/"><img src="/sugargh0st_rat/anime.gif" class="square-img"/>SugarGh0st RAT</a></td>
-          <td><a class="malmon-link" href="/rhadamanthys/"><img src="/rhadamanthys/anime.gif" class="square-img"/>Rhadamanthys</a></td>
-          <td><a class="malmon-link" href="/flame/"><img src="/flame/anime.gif" class="square-img"/>Flame</a></td>
-        </tr>
-        <tr>
-          <td><a class="malmon-link" href="/bfod/"><img src="/bfod/anime.gif" class="square-img"/>BFOD</a></td>
-          <td><a class="malmon-link" href="/olympic_destroyer/"><img src="/olympic_destroyer/anime.gif" class="square-img"/>Olympic Destroyer</a></td>
-          <td><a class="malmon-link" href="/sick_anubis/"><img src="/sick_anubis/anime.gif" class="square-img"/>Sick Anubis</a></td>
-          <td><a class="malmon-link" href="/whitesnake/"><img src="/whitesnake/anime.gif" class="square-img"/>WhiteSnake</a></td>
-          <td><a class="malmon-link" href="/trickbot/"><img src="/trickbot/anime.gif" class="square-img"/>TrickBot</a></td>
-          <td><a class="malmon-link" href="/raccoon/"><img src="/raccoon/anime.gif" class="square-img"/>Raccoon</a></td>
-          <td><a class="malmon-link" href="/bootkitty/"><img src="/bootkitty/anime.gif" class="square-img"/>BootKitty</a></td>
-          <td><a class="malmon-link" href="/warmcookie/"><img src="/warmcookie/anime.gif" class="square-img"/>WarmCookie</a></td>
-        </tr>
-        <tr>
-          <td><a class="malmon-link" href="/purplefox/"><img src="/purplefox/anime.gif" class="square-img"/>PurpleFox</a></td>
-          <td><a class="malmon-link" href="/blackenergy/"><img src="/blackenergy/anime.gif" class="square-img"/>BlackEnergy</a></td>
-          <td><a class="malmon-link" href="/pegasus/"><img src="/pegasus/anime.gif" class="square-img"/>Pegasus</a></td>
-          <td><a class="malmon-link" href="/sub7/"><img src="/sub7/anime.gif" class="square-img"/>Sub7</a></td>
-          <td><a class="malmon-link" href="/socgholish/"><img src="/socgholish/anime.gif" class="square-img"/>SocGholish</a></td>
-          <td><a class="malmon-link" href="/darkpulsar/"><img src="/darkpulsar/anime.gif" class="square-img"/>DarkPulsar</a></td>
-          <td><a class="malmon-link" href="/industroyer/"><img src="/industroyer/anime.gif" class="square-img"/>Industroyer</a></td>
-          <td><a class="malmon-link" href="/nimda/"><img src="/nimda/anime.gif" class="square-img"/>Nimda</a></td>
-        </tr>
-      </table>
-    </div>
-
-    <h1>Generation 2 Malmons</h1>
-    <div class="table-wrapper">
-      <table>
-        <tr>
-          <td><a class="malmon-link" href="/wirelurker/"><img src="/wirelurker/anime.gif" class="square-img"/>WireLurker</a></td>
-          <td><a class="malmon-link" href="/code_red/"><img src="/code_red/anime.gif" class="square-img"/>Code Red</a></td>
-          <td><a class="malmon-link" href="/lockbit/"><img src="/lockbit/anime.gif" class="square-img"/>LockBit</a></td>
-          <td><a class="malmon-link" href="/qrlog/"><img src="/qrlog/anime.gif" class="square-img"/>QRLog</a></td>
-          <td><a class="malmon-link" href="/zloader/"><img src="/zloader/anime.gif" class="square-img"/>ZLoader</a></td>
-          <td><a class="malmon-link" href="/exotickler/"><img src="/exotickler/anime.gif" class="square-img"/>ExoTickler</a></td>
-          <td><a class="malmon-link" href="/maliffic/"><img src="/maliffic/anime.gif" class="square-img"/>Malicious Traffic</a></td>
-          <td><a class="malmon-link" href="/triton/"><img src="/triton/anime.gif" class="square-img"/>Triton</a></td>
-        </tr>
-        <tr>
-          <td><a class="malmon-link" href="/flubot/"><img src="/flubot/anime.gif" class="square-img"/>FluBot</a></td>
-          <td><a class="malmon-link" href="/privateloader/"><img src="/privateloader/anime.gif" class="square-img"/>PrivateLoader</a></td>
-          <td><a class="malmon-link" href="/winnti/"><img src="/winnti/anime.gif" class="square-img"/>Winnti</a></td>
-          <td><a class="malmon-link" href="/lemonduck/"><img src="/lemonduck/anime.gif" class="square-img"/>LemonDuck</a></td>
-          <td><a class="malmon-link" href="/akairyu/"><img src="/akairyu/anime.gif" class="square-img"/>AkaiRyu</a></td>
-          <td><a class="malmon-link" href="/happy99/"><img src="/happy99/anime.gif" class="square-img"/>Happy99</a></td>
-          <td><a class="malmon-link" href="/sparkkitty/"><img src="/sparkkitty/anime.gif" class="square-img"/>SparkKitty</a></td>
-
-
-        </tr>
-      </table>
-    </div>
-
-    
-        <div class="download-link">
-          <a href="https://github.com/LambdaMamba/MalwareMonsters" target="_blank">Download the Malmons aka Malware Monsters GIFs</a>
-        </div>
-        <div class="download-link">
-          <a href="https://www.youtube.com/watch?v=VS4MI6ULBug&list=PLfl8PlLIW-41vTV5jS7KsyyH-o2m2B9vY" target="_blank">View the Malmons Creation Process by Lena</a>
-        </div>
     
 
     <div class="footer">
-      For business inquiries, please contact: contact@malmons.world
+      For inquiries, please contact: contact@malmons.world
       <br>
       Malmons aka Malware Monsters © 2026 Lena Yu aka LambdaMamba. All rights reserved.
     </div>
   </div>
 
-  
 </body>
 </html>
