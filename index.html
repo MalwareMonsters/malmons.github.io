@@ -115,7 +115,7 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      grid-template-columns: repeat(8, minmax(0, 1fr));
       gap: 20px;
       width: 100%;
       margin: 0 auto 40px;
@@ -124,6 +124,7 @@
 
     .malmon-card {
       text-align: center;
+      min-width: 0;
     }
 
     .square-img {
@@ -173,7 +174,7 @@
       }
 
       .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 16px;
       }
     }
@@ -195,8 +196,12 @@
       }
 
       .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .malmon-name {
+        font-size: 12px;
       }
     }
   </style>
@@ -212,9 +217,6 @@
 
   <div class="main-container">
     <img src="./malmonslogo.png" alt="Malmons Logo" class="logo">
-
-
-
 
     <h1>Generation 1 Malmons</h1>
     <div class="gallery">
@@ -287,7 +289,6 @@
       </iframe>
     </div>
 
-
     <div class="download-link">
       <a href="https://github.com/LambdaMamba/MalwareMonsters" target="_blank">Download the Malmons aka Malware Monsters GIFs</a>
     </div>
@@ -310,7 +311,6 @@
         <i class="fab fa-twitter" aria-hidden="true"></i>
       </a>
     </div>
-    
 
     <div class="footer">
       For inquiries, please contact: contact@malmons.world
