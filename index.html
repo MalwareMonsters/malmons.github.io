@@ -57,6 +57,47 @@
       text-decoration: underline;
     }
 
+    .lab-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      padding: 14px 16px;
+      background-color: #111;
+      border-bottom: 2px solid #1a73e8;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      font-size: clamp(14px, 2.2vw, 18px);
+      line-height: 1.4;
+    }
+
+    .lab-banner-cta {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: #1a73e8;
+      color: white;
+      white-space: nowrap;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .lab-banner:hover .lab-banner-cta,
+    .lab-banner:focus-visible .lab-banner-cta {
+      background-color: #4a90f0;
+    }
+
+    .lab-banner:focus-visible {
+      outline: 2px solid white;
+      outline-offset: -4px;
+    }
+
     .main-container {
       text-align: center;
       padding: 110px 20px 40px;
@@ -208,14 +249,18 @@
 </head>
 <body>
 
+  <a class="lab-banner" href="https://lab.malmons.world" target="_blank" rel="noopener">
+    <span>Try out the Malmons Lab: A gamified malware analysis training platform!</span>
+    <span class="lab-banner-cta">Play the free demo &rarr;</span>
+  </a>
 
 
   <div class="main-container">
     <img src="./malmonslogo.png" alt="Malmons Logo" class="logo">
 
-    <h2>Malmons aka Malware Monsters USB Keychains 2 Kickstarter is now live!</h2>
+    <h2>Malmons Lab: A Gamified Malware Analysis Training Platform Kickstarter is now live!</h2>
 
-    <iframe src="https://www.kickstarter.com/projects/lambdamamba/malmons-aka-malware-monsters-usb-keychains-2/widget/card.html?v=2" width="220" height="420" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://www.kickstarter.com/projects/lambdamamba/malmons-lab-a-gamified-malware-analysis-training-platform/widget/card.html?v=2" width="220" height="420" frameborder="0" scrolling="no"></iframe>
 
     <h1>Generation 1 Malmons</h1>
     <div class="gallery">
