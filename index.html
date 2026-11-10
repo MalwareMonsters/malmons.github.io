@@ -183,6 +183,99 @@
       word-break: break-word;
     }
 
+    .lenaean {
+      margin-top: 4px;
+      font-size: clamp(10px, 1.3vw, 12px);
+      line-height: 1.35;
+      color: #9fb7d9;
+      word-break: break-word;
+    }
+
+    .lenaean-help {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5em;
+      height: 1.5em;
+      margin-left: 4px;
+      padding: 0;
+      vertical-align: middle;
+      font: inherit;
+      font-size: 1em;
+      line-height: 1;
+      color: white;
+      background-color: #1a73e8;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .lenaean-help:hover,
+    .lenaean-help[aria-expanded="true"] {
+      background-color: #4a90f0;
+    }
+
+    .lenaean-help:focus-visible,
+    .lenaean-close:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+    .lenaean-pop {
+      position: absolute;
+      z-index: 1100;
+      width: min(360px, calc(100vw - 32px));
+      max-height: min(60vh, 420px);
+      overflow-y: auto;
+      padding: 14px 16px 16px;
+      background-color: #111;
+      border: 2px solid #1a73e8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: white;
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .lenaean-pop[hidden] {
+      display: none;
+    }
+
+    .lenaean-pop h3 {
+      margin: 0 28px 8px 0;
+      font-size: 15px;
+      color: #9fb7d9;
+    }
+
+    .lenaean-pop p {
+      margin: 0;
+    }
+
+    .lenaean-pop a {
+      color: #4a90f0;
+    }
+
+    .lenaean-close {
+      position: absolute;
+      top: 6px;
+      right: 8px;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      font: inherit;
+      font-size: 20px;
+      line-height: 1;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .lenaean-close:hover {
+      color: #4a90f0;
+    }
+
     .footer {
       text-align: center;
       font-size: 14px;
@@ -264,41 +357,41 @@
 
     <h1>Generation 1 Malmons</h1>
     <div class="gallery">
-      <div class="malmon-card"><img src="/gaboongrabber/anime.gif" class="square-img" alt="GabooonGrabber"><div class="malmon-name">GabooonGrabber</div></div>
-      <div class="malmon-card"><img src="/raspberry_robin/anime.gif" class="square-img" alt="Raspberry Robin"><div class="malmon-name">Raspberry Robin</div></div>
-      <div class="malmon-card"><img src="/noodle_rat/anime.gif" class="square-img" alt="Noodle RAT"><div class="malmon-name">Noodle RAT</div></div>
-      <div class="malmon-card"><img src="/litterdrifter/anime.gif" class="square-img" alt="LitterDrifter"><div class="malmon-name">LitterDrifter</div></div>
-      <div class="malmon-card"><img src="/gh0st_rat/anime.gif" class="square-img" alt="Gh0st RAT"><div class="malmon-name">Gh0st RAT</div></div>
-      <div class="malmon-card"><img src="/stuxnet/anime.gif" class="square-img" alt="Stuxnet"><div class="malmon-name">Stuxnet</div></div>
-      <div class="malmon-card"><img src="/fakebat/anime.gif" class="square-img" alt="FakeBat"><div class="malmon-name">FakeBat</div></div>
-      <div class="malmon-card"><img src="/poisonivy/anime.gif" class="square-img" alt="PoisonIvy"><div class="malmon-name">PoisonIvy</div></div>
+      <div class="malmon-card"><img src="/gaboongrabber/anime.gif" class="square-img" alt="GabooonGrabber"><div class="malmon-name">GabooonGrabber</div><div class="lenaean"><span class="lenaean-name">Wintrojania Droppor Multistageium (Global 2023)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/raspberry_robin/anime.gif" class="square-img" alt="Raspberry Robin"><div class="malmon-name">Raspberry Robin</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Qnapium (Europe 2019)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/noodle_rat/anime.gif" class="square-img" alt="Noodle RAT"><div class="malmon-name">Noodle RAT</div><div class="lenaean"><span class="lenaean-name">Multrojania Controllor Noodleius (Asia 2024)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/litterdrifter/anime.gif" class="square-img" alt="LitterDrifter"><div class="malmon-name">LitterDrifter</div><div class="lenaean"><span class="lenaean-name">Winwormia Loador Trashius (Europe 2023)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/gh0st_rat/anime.gif" class="square-img" alt="Gh0st RAT"><div class="malmon-name">Gh0st RAT</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Gh0stius (Asia 2008)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/stuxnet/anime.gif" class="square-img" alt="Stuxnet"><div class="malmon-name">Stuxnet</div><div class="lenaean"><span class="lenaean-name">Winwormia Destroyor Centrifugium (Iran 2010)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/fakebat/anime.gif" class="square-img" alt="FakeBat"><div class="malmon-name">FakeBat</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Msixium (Global 2023)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/poisonivy/anime.gif" class="square-img" alt="PoisonIvy"><div class="malmon-name">PoisonIvy</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Camellium (Global 2005)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
 
-      <div class="malmon-card"><img src="/wannacry/anime.gif" class="square-img" alt="WannaCry"><div class="malmon-name">WannaCry</div></div>
-      <div class="malmon-card"><img src="/slammer/anime.gif" class="square-img" alt="Slammer"><div class="malmon-name">Slammer</div></div>
-      <div class="malmon-card"><img src="/petya/anime.gif" class="square-img" alt="Petya"><div class="malmon-name">Petya</div></div>
-      <div class="malmon-card"><img src="/notpetya/anime.gif" class="square-img" alt="NotPetya"><div class="malmon-name">NotPetya</div></div>
-      <div class="malmon-card"><img src="/iloveyou/anime.gif" class="square-img" alt="ILOVEYOU"><div class="malmon-name">ILOVEYOU</div></div>
-      <div class="malmon-card"><img src="/sugargh0st_rat/anime.gif" class="square-img" alt="SugarGh0st RAT"><div class="malmon-name">SugarGh0st RAT</div></div>
-      <div class="malmon-card"><img src="/rhadamanthys/anime.gif" class="square-img" alt="Rhadamanthys"><div class="malmon-name">Rhadamanthys</div></div>
-      <div class="malmon-card"><img src="/flame/anime.gif" class="square-img" alt="Flame"><div class="malmon-name">Flame</div></div>
+      <div class="malmon-card"><img src="/wannacry/anime.gif" class="square-img" alt="WannaCry"><div class="malmon-name">WannaCry</div><div class="lenaean"><span class="lenaean-name">Winwormia Cryptor Eternalblueium (Global 2017)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/slammer/anime.gif" class="square-img" alt="Slammer"><div class="malmon-name">Slammer</div><div class="lenaean"><span class="lenaean-name">Winwormia Denior Sequelium (Global 2003)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/petya/anime.gif" class="square-img" alt="Petya"><div class="malmon-name">Petya</div><div class="lenaean"><span class="lenaean-name">Wintrojania Cryptor Masterbootium (Global 2016)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/notpetya/anime.gif" class="square-img" alt="NotPetya"><div class="malmon-name">NotPetya</div><div class="lenaean"><span class="lenaean-name">Winwormia Wipor Masterbootium (Ukraine 2017)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/iloveyou/anime.gif" class="square-img" alt="ILOVEYOU"><div class="malmon-name">ILOVEYOU</div><div class="lenaean"><span class="lenaean-name">Winwormia Infector Loveletterius (Global 2000)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/sugargh0st_rat/anime.gif" class="square-img" alt="SugarGh0st RAT"><div class="malmon-name">SugarGh0st RAT</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Sugargh0stius (Asia 2023)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/rhadamanthys/anime.gif" class="square-img" alt="Rhadamanthys"><div class="malmon-name">Rhadamanthys</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Steganium (Global 2022)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/flame/anime.gif" class="square-img" alt="Flame"><div class="malmon-name">Flame</div><div class="lenaean"><span class="lenaean-name">Winwareia Spyor Skypium (Middle East 2012)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
 
-      <div class="malmon-card"><img src="/bfod/anime.gif" class="square-img" alt="BFOD"><div class="malmon-name">BFOD</div></div>
-      <div class="malmon-card"><img src="/olympic_destroyer/anime.gif" class="square-img" alt="Olympic Destroyer"><div class="malmon-name">Olympic Destroyer</div></div>
-      <div class="malmon-card"><img src="/sick_anubis/anime.gif" class="square-img" alt="Sick Anubis"><div class="malmon-name">Sick Anubis</div></div>
-      <div class="malmon-card"><img src="/whitesnake/anime.gif" class="square-img" alt="WhiteSnake"><div class="malmon-name">WhiteSnake</div></div>
-      <div class="malmon-card"><img src="/trickbot/anime.gif" class="square-img" alt="TrickBot"><div class="malmon-name">TrickBot</div></div>
-      <div class="malmon-card"><img src="/raccoon/anime.gif" class="square-img" alt="Raccoon"><div class="malmon-name">Raccoon</div></div>
-      <div class="malmon-card"><img src="/bootkitty/anime.gif" class="square-img" alt="BootKitty"><div class="malmon-name">BootKitty</div></div>
-      <div class="malmon-card"><img src="/warmcookie/anime.gif" class="square-img" alt="WarmCookie"><div class="malmon-name">WarmCookie</div></div>
+      <div class="malmon-card"><img src="/bfod/anime.gif" class="square-img" alt="BFOD"><div class="malmon-name">BFOD</div><div class="lenaean"><span class="lenaean-name">Mulwareia Denior Edrium (Global 2024)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/olympic_destroyer/anime.gif" class="square-img" alt="Olympic Destroyer"><div class="malmon-name">Olympic Destroyer</div><div class="lenaean"><span class="lenaean-name">Winwormia Wipor Olympicium (Korea 2018)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/sick_anubis/anime.gif" class="square-img" alt="Sick Anubis"><div class="malmon-name">Sick Anubis</div><div class="lenaean"><span class="lenaean-name">Andtrojania Stealor Bankium (Global 2017)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/whitesnake/anime.gif" class="square-img" alt="WhiteSnake"><div class="malmon-name">WhiteSnake</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Telegranium (Global 2022)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/trickbot/anime.gif" class="square-img" alt="TrickBot"><div class="malmon-name">TrickBot</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Botnetium (Global 2016)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/raccoon/anime.gif" class="square-img" alt="Raccoon"><div class="malmon-name">Raccoon</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Maasium (Global 2019)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/bootkitty/anime.gif" class="square-img" alt="BootKitty"><div class="malmon-name">BootKitty</div><div class="lenaean"><span class="lenaean-name">Linwareia Controllor Uefium (Global 2024)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/warmcookie/anime.gif" class="square-img" alt="WarmCookie"><div class="malmon-name">WarmCookie</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Cookieium (Global 2024)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
 
-      <div class="malmon-card"><img src="/purplefox/anime.gif" class="square-img" alt="PurpleFox"><div class="malmon-name">PurpleFox</div></div>
-      <div class="malmon-card"><img src="/blackenergy/anime.gif" class="square-img" alt="BlackEnergy"><div class="malmon-name">BlackEnergy</div></div>
-      <div class="malmon-card"><img src="/pegasus/anime.gif" class="square-img" alt="Pegasus"><div class="malmon-name">Pegasus</div></div>
-      <div class="malmon-card"><img src="/sub7/anime.gif" class="square-img" alt="Sub7"><div class="malmon-name">Sub7</div></div>
-      <div class="malmon-card"><img src="/socgholish/anime.gif" class="square-img" alt="SocGholish"><div class="malmon-name">SocGholish</div></div>
-      <div class="malmon-card"><img src="/darkpulsar/anime.gif" class="square-img" alt="DarkPulsar"><div class="malmon-name">DarkPulsar</div></div>
-      <div class="malmon-card"><img src="/industroyer/anime.gif" class="square-img" alt="Industroyer"><div class="malmon-name">Industroyer</div></div>
-      <div class="malmon-card"><img src="/nimda/anime.gif" class="square-img" alt="Nimda"><div class="malmon-name">Nimda</div></div>
+      <div class="malmon-card"><img src="/purplefox/anime.gif" class="square-img" alt="PurpleFox"><div class="malmon-name">PurpleFox</div><div class="lenaean"><span class="lenaean-name">Winwareia Rootor Shellcodium (Global 2018)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/blackenergy/anime.gif" class="square-img" alt="BlackEnergy"><div class="malmon-name">BlackEnergy</div><div class="lenaean"><span class="lenaean-name">Winwareia Destroyor Killdiskium (Ukraine 2015)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/pegasus/anime.gif" class="square-img" alt="Pegasus"><div class="malmon-name">Pegasus</div><div class="lenaean"><span class="lenaean-name">Multrojania Spyor Forcedentrium (Global 2016)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/sub7/anime.gif" class="square-img" alt="Sub7"><div class="malmon-name">Sub7</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Icquim (Global 1999)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/socgholish/anime.gif" class="square-img" alt="SocGholish"><div class="malmon-name">SocGholish</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Fakeupdatium (Global 2018)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/darkpulsar/anime.gif" class="square-img" alt="DarkPulsar"><div class="malmon-name">DarkPulsar</div><div class="lenaean"><span class="lenaean-name">Winwareia Controllor Danderspritzium (Global 2018)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/industroyer/anime.gif" class="square-img" alt="Industroyer"><div class="malmon-name">Industroyer</div><div class="lenaean"><span class="lenaean-name">Winwareia Destroyor Powergridium (Ukraine 2016)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
+      <div class="malmon-card"><img src="/nimda/anime.gif" class="square-img" alt="Nimda"><div class="malmon-name">Nimda</div><div class="lenaean"><span class="lenaean-name">Winwormia Infector Adminius (Global 2001)</span><button type="button" class="lenaean-help" aria-label="What is a Lenaean name?" aria-haspopup="dialog" aria-expanded="false" aria-controls="lenaean-pop">?</button></div></div>
     </div>
 
     <h1>Generation 2 Malmons</h1>
@@ -353,6 +446,64 @@
       Malmons aka Malware Monsters © 2026 Lena Yu aka LambdaMamba. All rights reserved.
     </div>
   </div>
+
+  <div id="lenaean-pop" class="lenaean-pop" role="dialog" aria-labelledby="lenaean-pop-title" hidden>
+    <button type="button" class="lenaean-close" aria-label="Close">&times;</button>
+    <h3 id="lenaean-pop-title">What is a Lenaean name?</h3>
+    <p>A Lenaean name is a formal scientific-style name for a piece of malware, modelled on the Linnaean binomials biologists use for living species. Created by Lena Yu for <a href="https://nostarch.com/unnatural-history-of-malware" target="_blank" rel="noopener">&ldquo;The (Un)Natural History of Malware&rdquo;</a> book published by No Starch Press, it follows the pattern Platform-Type Function Trait (Location Year): the first word combines the operating system the malware lives on with its kingdom (Wormia for self-spreading worms, Trojania for malware that enters by deception, Wareia for modular platforms); the second names its primary function, such as Cryptor, Stealor, or Destroyor; the third captures its defining trait, ending in -ius when it comes from a string the malware literally carries and -ium when it describes a mechanism or behavior; and the location and year record where and when it was discovered. Read as a whole, a name like Winwormia Infector Loveletterius (Global 2000) tells you what the specimen is, how it lives, and what makes it distinctive, in a way that a common name like &ldquo;ILOVEYOU&rdquo; cannot.</p>
+  </div>
+
+  <script>
+    (function () {
+      var pop = document.getElementById('lenaean-pop');
+      var closeBtn = pop.querySelector('.lenaean-close');
+      var current = null;
+
+      function place(btn) {
+        var r = btn.getBoundingClientRect();
+        var w = pop.offsetWidth, h = pop.offsetHeight, gap = 8, edge = 16;
+        var left = r.left + r.width / 2 - w / 2;
+        left = Math.max(edge, Math.min(left, document.documentElement.clientWidth - w - edge));
+        var top = r.bottom + gap;
+        if (top + h > window.innerHeight - edge && r.top - gap - h > edge) top = r.top - gap - h;
+        pop.style.left = (left + window.scrollX) + 'px';
+        pop.style.top = (top + window.scrollY) + 'px';
+      }
+
+      function open(btn) {
+        if (current) current.setAttribute('aria-expanded', 'false');
+        current = btn;
+        btn.setAttribute('aria-expanded', 'true');
+        pop.hidden = false;
+        place(btn);
+        closeBtn.focus({ preventScroll: true });
+      }
+
+      function close(returnFocus) {
+        if (!current) return;
+        pop.hidden = true;
+        current.setAttribute('aria-expanded', 'false');
+        if (returnFocus) current.focus({ preventScroll: true });
+        current = null;
+      }
+
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('.lenaean-help');
+        if (btn) {
+          if (btn === current) close(true); else open(btn);
+          return;
+        }
+        if (e.target.closest('.lenaean-close')) { close(true); return; }
+        if (current && !pop.contains(e.target)) close(false);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && current) close(true);
+      });
+
+      window.addEventListener('resize', function () { if (current) place(current); });
+    })();
+  </script>
 
 </body>
 </html>
