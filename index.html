@@ -2,8 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Malmons World</title>
+  <title>Malmons — Malware Monsters by Lena Yu (LambdaMamba) | マルモンズ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Malmons (マルモンズ) — Malware Monsters personified as collectible creatures, created by malware researcher Lena Yu (LambdaMamba). Explore the Malmons bestiary and play Malmons Lab (malware analysis training) and Malmons Kart.">
+  <meta name="keywords" content="Malmons, Malware Monsters, マルモンズ, Lena Yu, LambdaMamba, Lena Yu aka LambdaMamba, malware analysis, reverse engineering, Malmons Lab, Malmons Kart, Malmons World">
+  <meta name="author" content="Lena Yu (LambdaMamba)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#111111">
+  <link rel="canonical" href="https://malmons.world/">
+  <link rel="alternate" hreflang="en" href="https://malmons.world/">
+  <link rel="alternate" hreflang="ja" href="https://malmons.world/">
+  <link rel="alternate" hreflang="x-default" href="https://malmons.world/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Malmons World">
+  <meta property="og:title" content="Malmons — Malware Monsters by Lena Yu (LambdaMamba) | マルモンズ">
+  <meta property="og:description" content="Malware personified as collectible monsters, created by Lena Yu (LambdaMamba). Play Malmons Lab and Malmons Kart.">
+  <meta property="og:url" content="https://malmons.world/">
+  <meta property="og:image" content="https://malmons.world/malmonslogo.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ja_JP">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Malmons — Malware Monsters by Lena Yu (LambdaMamba) | マルモンズ">
+  <meta name="twitter:description" content="Malware personified as collectible monsters, created by Lena Yu (LambdaMamba). Play Malmons Lab and Malmons Kart.">
+  <meta name="twitter:image" content="https://malmons.world/malmonslogo.png">
   <link rel="icon" type="image/x-icon" href="/malmonslogo.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -57,7 +80,7 @@
       text-decoration: underline;
     }
 
-    .lab-banner {
+    .site-nav {
       position: fixed;
       top: 0;
       left: 0;
@@ -67,40 +90,44 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      gap: 8px 16px;
-      padding: 14px 16px;
+      gap: 10px 14px;
+      padding: 10px 16px;
       background-color: #111;
-      border-bottom: 2px solid #1a73e8;
+      border-bottom: 2px solid #fff;
       box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      font-size: clamp(14px, 2.2vw, 18px);
-      line-height: 1.4;
     }
 
-    .lab-banner-cta {
+    .site-nav a {
       display: inline-block;
-      padding: 6px 14px;
-      background-color: #1a73e8;
-      color: white;
+      padding: 9px 20px;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid #fff;
+      border-radius: 0;
+      font-size: clamp(14px, 2.2vw, 17px);
       white-space: nowrap;
-      transition: background-color 0.2s ease-in-out;
+      transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
     }
 
-    .lab-banner:hover .lab-banner-cta,
-    .lab-banner:focus-visible .lab-banner-cta {
-      background-color: #4a90f0;
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      background-color: #fff;
+      color: #000;
     }
 
-    .lab-banner:focus-visible {
-      outline: 2px solid white;
-      outline-offset: -4px;
+    .site-nav a:active {
+      transform: translateY(1px);
+    }
+
+    .site-nav a:focus-visible {
+      outline: 2px solid #1a73e8;
+      outline-offset: 2px;
     }
 
     .main-container {
       text-align: center;
-      padding: 110px 20px 40px;
+      padding: 96px 20px 40px;
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -201,6 +228,18 @@
 
 
 
+    .logo-h1 {
+      margin: 0;
+      line-height: 0;
+    }
+
+    .gen-title {
+      font-size: clamp(24px, 4vw, 28px);
+      margin: 40px auto 20px;
+      max-width: 900px;
+      text-align: center;
+    }
+
     .footer {
       text-align: center;
       font-size: 14px;
@@ -227,117 +266,100 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .main-container {
-        padding-top: 130px;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
-      }
+    @media (max-width: 1000px) {
+      .gallery { grid-template-columns: repeat(6, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 480px) {
-      .menu-bar {
-        gap: 8px 14px;
-        padding: 10px 12px;
-      }
+    @media (max-width: 720px) {
+      .main-container { padding-top: 92px; }
+      .gallery { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+    }
 
-      .menu-bar a {
-        font-size: 14px;
-      }
+    @media (max-width: 560px) {
+      .site-nav { gap: 8px 10px; padding: 9px 10px; }
+      .main-container { padding-top: 90px; padding-left: 14px; padding-right: 14px; }
+      .gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+      .malmon-name { font-size: 13px; }
+    }
 
-      .main-container {
-        padding-top: 140px;
-        padding-left: 14px;
-        padding-right: 14px;
-      }
-
-      .gallery {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .malmon-name {
-        font-size: 12px;
-      }
+    @media (max-width: 400px) {
+      .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <a class="lab-banner" href="https://lab.malmons.world" target="_blank" rel="noopener">
-    <span>Try out the Malmons Lab: A gamified malware analysis training platform!</span>
-    <span class="lab-banner-cta">Play the free demo &rarr;</span>
-  </a>
+  <nav class="site-nav" aria-label="Malmons sites">
+    <a href="https://lab.malmons.world/" target="_blank" rel="noopener">Malmons Lab</a>
+    <a href="https://kart.malmons.world/" target="_blank" rel="noopener">Malmons Kart</a>
+  </nav>
 
 
   <div class="main-container">
-    <img src="./malmonslogo.png" alt="Malmons Logo" class="logo">
+    <h1 class="logo-h1"><img src="./malmonslogo.png" alt="Malmons — Malware Monsters by Lena Yu (LambdaMamba)" class="logo"></h1>
 
     <h2>Malmons Lab: A Gamified Malware Analysis Training Platform Kickstarter is now live!</h2>
 
     <iframe src="https://www.kickstarter.com/projects/lambdamamba/malmons-lab-a-gamified-malware-analysis-training-platform/widget/card.html?v=2" width="220" height="420" frameborder="0" scrolling="no"></iframe>
 
-    <h1>Generation 1 Malmons</h1>
+    <h2 class="gen-title">Generation 1 Malmons</h2>
     <div class="gallery">
-      <div class="malmon-card"><img src="/gaboongrabber/anime.gif" class="square-img" alt="GabooonGrabber"><div class="malmon-name">GaboonGrabber</div><div class="lenaean"><span class="lenaean-name">Wintrojania Droppor Multistageium (Global 2023)</span></div></div>
-      <div class="malmon-card"><img src="/raspberry_robin/anime.gif" class="square-img" alt="Raspberry Robin"><div class="malmon-name">Raspberry Robin</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Qnapium (Europe 2019)</span></div></div>
-      <div class="malmon-card"><img src="/noodle_rat/anime.gif" class="square-img" alt="Noodle RAT"><div class="malmon-name">Noodle RAT</div><div class="lenaean"><span class="lenaean-name">Multrojania Controllor Noodleius (Asia 2024)</span></div></div>
-      <div class="malmon-card"><img src="/litterdrifter/anime.gif" class="square-img" alt="LitterDrifter"><div class="malmon-name">LitterDrifter</div><div class="lenaean"><span class="lenaean-name">Winwormia Loador Trashius (Europe 2023)</span></div></div>
-      <div class="malmon-card"><img src="/gh0st_rat/anime.gif" class="square-img" alt="Gh0st RAT"><div class="malmon-name">Gh0st RAT</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Gh0stius (Asia 2008)</span></div></div>
-      <div class="malmon-card"><img src="/stuxnet/anime.gif" class="square-img" alt="Stuxnet"><div class="malmon-name">Stuxnet</div><div class="lenaean"><span class="lenaean-name">Winwormia Destroyor Centrifugium (Iran 2010)</span></div></div>
-      <div class="malmon-card"><img src="/fakebat/anime.gif" class="square-img" alt="FakeBat"><div class="malmon-name">FakeBat</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Msixium (Global 2023)</span></div></div>
-      <div class="malmon-card"><img src="/poisonivy/anime.gif" class="square-img" alt="PoisonIvy"><div class="malmon-name">PoisonIvy</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Camellium (Global 2005)</span></div></div>
+      <div class="malmon-card"><img src="/gaboongrabber/anime.gif" loading="lazy" decoding="async" class="square-img" alt="GaboonGrabber"><div class="malmon-name">GaboonGrabber</div><div class="lenaean"><span class="lenaean-name">Wintrojania Droppor Multistageium (Global 2023)</span></div></div>
+      <div class="malmon-card"><img src="/raspberry_robin/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Raspberry Robin"><div class="malmon-name">Raspberry Robin</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Qnapium (Europe 2019)</span></div></div>
+      <div class="malmon-card"><img src="/noodle_rat/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Noodle RAT"><div class="malmon-name">Noodle RAT</div><div class="lenaean"><span class="lenaean-name">Multrojania Controllor Noodleius (Asia 2024)</span></div></div>
+      <div class="malmon-card"><img src="/litterdrifter/anime.gif" loading="lazy" decoding="async" class="square-img" alt="LitterDrifter"><div class="malmon-name">LitterDrifter</div><div class="lenaean"><span class="lenaean-name">Winwormia Loador Trashius (Europe 2023)</span></div></div>
+      <div class="malmon-card"><img src="/gh0st_rat/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Gh0st RAT"><div class="malmon-name">Gh0st RAT</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Gh0stius (Asia 2008)</span></div></div>
+      <div class="malmon-card"><img src="/stuxnet/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Stuxnet"><div class="malmon-name">Stuxnet</div><div class="lenaean"><span class="lenaean-name">Winwormia Destroyor Centrifugium (Iran 2010)</span></div></div>
+      <div class="malmon-card"><img src="/fakebat/anime.gif" loading="lazy" decoding="async" class="square-img" alt="FakeBat"><div class="malmon-name">FakeBat</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Msixium (Global 2023)</span></div></div>
+      <div class="malmon-card"><img src="/poisonivy/anime.gif" loading="lazy" decoding="async" class="square-img" alt="PoisonIvy"><div class="malmon-name">PoisonIvy</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Camellium (Global 2005)</span></div></div>
 
-      <div class="malmon-card"><img src="/wannacry/anime.gif" class="square-img" alt="WannaCry"><div class="malmon-name">WannaCry</div><div class="lenaean"><span class="lenaean-name">Winwormia Cryptor Eternalblueium (Global 2017)</span></div></div>
-      <div class="malmon-card"><img src="/slammer/anime.gif" class="square-img" alt="Slammer"><div class="malmon-name">Slammer</div><div class="lenaean"><span class="lenaean-name">Winwormia Denior Sequelium (Global 2003)</span></div></div>
-      <div class="malmon-card"><img src="/petya/anime.gif" class="square-img" alt="Petya"><div class="malmon-name">Petya</div><div class="lenaean"><span class="lenaean-name">Wintrojania Cryptor Masterbootium (Global 2016)</span></div></div>
-      <div class="malmon-card"><img src="/notpetya/anime.gif" class="square-img" alt="NotPetya"><div class="malmon-name">NotPetya</div><div class="lenaean"><span class="lenaean-name">Winwormia Wipor Masterbootium (Ukraine 2017)</span></div></div>
-      <div class="malmon-card"><img src="/iloveyou/anime.gif" class="square-img" alt="ILOVEYOU"><div class="malmon-name">ILOVEYOU</div><div class="lenaean"><span class="lenaean-name">Winwormia Infector Loveletterius (Global 2000)</span></div></div>
-      <div class="malmon-card"><img src="/sugargh0st_rat/anime.gif" class="square-img" alt="SugarGh0st RAT"><div class="malmon-name">SugarGh0st RAT</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Sugargh0stius (Asia 2023)</span></div></div>
-      <div class="malmon-card"><img src="/rhadamanthys/anime.gif" class="square-img" alt="Rhadamanthys"><div class="malmon-name">Rhadamanthys</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Steganium (Global 2022)</span></div></div>
-      <div class="malmon-card"><img src="/flame/anime.gif" class="square-img" alt="Flame"><div class="malmon-name">Flame</div><div class="lenaean"><span class="lenaean-name">Winwareia Spyor Skypium (Middle East 2012)</span></div></div>
+      <div class="malmon-card"><img src="/wannacry/anime.gif" loading="lazy" decoding="async" class="square-img" alt="WannaCry"><div class="malmon-name">WannaCry</div><div class="lenaean"><span class="lenaean-name">Winwormia Cryptor Eternalblueium (Global 2017)</span></div></div>
+      <div class="malmon-card"><img src="/slammer/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Slammer"><div class="malmon-name">Slammer</div><div class="lenaean"><span class="lenaean-name">Winwormia Denior Sequelium (Global 2003)</span></div></div>
+      <div class="malmon-card"><img src="/petya/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Petya"><div class="malmon-name">Petya</div><div class="lenaean"><span class="lenaean-name">Wintrojania Cryptor Masterbootium (Global 2016)</span></div></div>
+      <div class="malmon-card"><img src="/notpetya/anime.gif" loading="lazy" decoding="async" class="square-img" alt="NotPetya"><div class="malmon-name">NotPetya</div><div class="lenaean"><span class="lenaean-name">Winwormia Wipor Masterbootium (Ukraine 2017)</span></div></div>
+      <div class="malmon-card"><img src="/iloveyou/anime.gif" loading="lazy" decoding="async" class="square-img" alt="ILOVEYOU"><div class="malmon-name">ILOVEYOU</div><div class="lenaean"><span class="lenaean-name">Winwormia Infector Loveletterius (Global 2000)</span></div></div>
+      <div class="malmon-card"><img src="/sugargh0st_rat/anime.gif" loading="lazy" decoding="async" class="square-img" alt="SugarGh0st RAT"><div class="malmon-name">SugarGh0st RAT</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Sugargh0stius (Asia 2023)</span></div></div>
+      <div class="malmon-card"><img src="/rhadamanthys/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Rhadamanthys"><div class="malmon-name">Rhadamanthys</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Steganium (Global 2022)</span></div></div>
+      <div class="malmon-card"><img src="/flame/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Flame"><div class="malmon-name">Flame</div><div class="lenaean"><span class="lenaean-name">Winwareia Spyor Skypium (Middle East 2012)</span></div></div>
 
-      <div class="malmon-card"><img src="/bfod/anime.gif" class="square-img" alt="BFOD"><div class="malmon-name">BFOD</div><div class="lenaean"><span class="lenaean-name">Mulwareia Denior Edrium (Global 2024)</span></div></div>
-      <div class="malmon-card"><img src="/olympic_destroyer/anime.gif" class="square-img" alt="Olympic Destroyer"><div class="malmon-name">Olympic Destroyer</div><div class="lenaean"><span class="lenaean-name">Winwormia Wipor Olympicium (Korea 2018)</span></div></div>
-      <div class="malmon-card"><img src="/sick_anubis/anime.gif" class="square-img" alt="Sick Anubis"><div class="malmon-name">Sick Anubis</div><div class="lenaean"><span class="lenaean-name">Andtrojania Stealor Bankium (Global 2017)</span></div></div>
-      <div class="malmon-card"><img src="/whitesnake/anime.gif" class="square-img" alt="WhiteSnake"><div class="malmon-name">WhiteSnake</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Telegranium (Global 2022)</span></div></div>
-      <div class="malmon-card"><img src="/trickbot/anime.gif" class="square-img" alt="TrickBot"><div class="malmon-name">TrickBot</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Botnetium (Global 2016)</span></div></div>
-      <div class="malmon-card"><img src="/raccoon/anime.gif" class="square-img" alt="Raccoon"><div class="malmon-name">Raccoon</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Maasium (Global 2019)</span></div></div>
-      <div class="malmon-card"><img src="/bootkitty/anime.gif" class="square-img" alt="BootKitty"><div class="malmon-name">BootKitty</div><div class="lenaean"><span class="lenaean-name">Linwareia Controllor Uefium (Global 2024)</span></div></div>
-      <div class="malmon-card"><img src="/warmcookie/anime.gif" class="square-img" alt="WarmCookie"><div class="malmon-name">WarmCookie</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Cookieium (Global 2024)</span></div></div>
+      <div class="malmon-card"><img src="/bfod/anime.gif" loading="lazy" decoding="async" class="square-img" alt="BFOD"><div class="malmon-name">BFOD</div><div class="lenaean"><span class="lenaean-name">Mulwareia Denior Edrium (Global 2024)</span></div></div>
+      <div class="malmon-card"><img src="/olympic_destroyer/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Olympic Destroyer"><div class="malmon-name">Olympic Destroyer</div><div class="lenaean"><span class="lenaean-name">Winwormia Wipor Olympicium (Korea 2018)</span></div></div>
+      <div class="malmon-card"><img src="/sick_anubis/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Sick Anubis"><div class="malmon-name">Sick Anubis</div><div class="lenaean"><span class="lenaean-name">Andtrojania Stealor Bankium (Global 2017)</span></div></div>
+      <div class="malmon-card"><img src="/whitesnake/anime.gif" loading="lazy" decoding="async" class="square-img" alt="WhiteSnake"><div class="malmon-name">WhiteSnake</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Telegranium (Global 2022)</span></div></div>
+      <div class="malmon-card"><img src="/trickbot/anime.gif" loading="lazy" decoding="async" class="square-img" alt="TrickBot"><div class="malmon-name">TrickBot</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Botnetium (Global 2016)</span></div></div>
+      <div class="malmon-card"><img src="/raccoon/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Raccoon"><div class="malmon-name">Raccoon</div><div class="lenaean"><span class="lenaean-name">Wintrojania Stealor Maasium (Global 2019)</span></div></div>
+      <div class="malmon-card"><img src="/bootkitty/anime.gif" loading="lazy" decoding="async" class="square-img" alt="BootKitty"><div class="malmon-name">BootKitty</div><div class="lenaean"><span class="lenaean-name">Linwareia Controllor Uefium (Global 2024)</span></div></div>
+      <div class="malmon-card"><img src="/warmcookie/anime.gif" loading="lazy" decoding="async" class="square-img" alt="WarmCookie"><div class="malmon-name">WarmCookie</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Cookieium (Global 2024)</span></div></div>
 
-      <div class="malmon-card"><img src="/purplefox/anime.gif" class="square-img" alt="PurpleFox"><div class="malmon-name">PurpleFox</div><div class="lenaean"><span class="lenaean-name">Winwareia Rootor Shellcodium (Global 2018)</span></div></div>
-      <div class="malmon-card"><img src="/blackenergy/anime.gif" class="square-img" alt="BlackEnergy"><div class="malmon-name">BlackEnergy</div><div class="lenaean"><span class="lenaean-name">Winwareia Destroyor Killdiskium (Ukraine 2015)</span></div></div>
-      <div class="malmon-card"><img src="/pegasus/anime.gif" class="square-img" alt="Pegasus"><div class="malmon-name">Pegasus</div><div class="lenaean"><span class="lenaean-name">Multrojania Spyor Forcedentrium (Global 2016)</span></div></div>
-      <div class="malmon-card"><img src="/sub7/anime.gif" class="square-img" alt="Sub7"><div class="malmon-name">Sub7</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Icquim (Global 1999)</span></div></div>
-      <div class="malmon-card"><img src="/socgholish/anime.gif" class="square-img" alt="SocGholish"><div class="malmon-name">SocGholish</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Fakeupdatium (Global 2018)</span></div></div>
-      <div class="malmon-card"><img src="/darkpulsar/anime.gif" class="square-img" alt="DarkPulsar"><div class="malmon-name">DarkPulsar</div><div class="lenaean"><span class="lenaean-name">Winwareia Controllor Danderspritzium (Global 2018)</span></div></div>
-      <div class="malmon-card"><img src="/industroyer/anime.gif" class="square-img" alt="Industroyer"><div class="malmon-name">Industroyer</div><div class="lenaean"><span class="lenaean-name">Winwareia Destroyor Powergridium (Ukraine 2016)</span></div></div>
-      <div class="malmon-card"><img src="/nimda/anime.gif" class="square-img" alt="Nimda"><div class="malmon-name">Nimda</div><div class="lenaean"><span class="lenaean-name">Winwormia Infector Adminius (Global 2001)</span></div></div>
+      <div class="malmon-card"><img src="/purplefox/anime.gif" loading="lazy" decoding="async" class="square-img" alt="PurpleFox"><div class="malmon-name">PurpleFox</div><div class="lenaean"><span class="lenaean-name">Winwareia Rootor Shellcodium (Global 2018)</span></div></div>
+      <div class="malmon-card"><img src="/blackenergy/anime.gif" loading="lazy" decoding="async" class="square-img" alt="BlackEnergy"><div class="malmon-name">BlackEnergy</div><div class="lenaean"><span class="lenaean-name">Winwareia Destroyor Killdiskium (Ukraine 2015)</span></div></div>
+      <div class="malmon-card"><img src="/pegasus/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Pegasus"><div class="malmon-name">Pegasus</div><div class="lenaean"><span class="lenaean-name">Multrojania Spyor Forcedentrium (Global 2016)</span></div></div>
+      <div class="malmon-card"><img src="/sub7/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Sub7"><div class="malmon-name">Sub7</div><div class="lenaean"><span class="lenaean-name">Wintrojania Controllor Icquim (Global 1999)</span></div></div>
+      <div class="malmon-card"><img src="/socgholish/anime.gif" loading="lazy" decoding="async" class="square-img" alt="SocGholish"><div class="malmon-name">SocGholish</div><div class="lenaean"><span class="lenaean-name">Wintrojania Loador Fakeupdatium (Global 2018)</span></div></div>
+      <div class="malmon-card"><img src="/darkpulsar/anime.gif" loading="lazy" decoding="async" class="square-img" alt="DarkPulsar"><div class="malmon-name">DarkPulsar</div><div class="lenaean"><span class="lenaean-name">Winwareia Controllor Danderspritzium (Global 2018)</span></div></div>
+      <div class="malmon-card"><img src="/industroyer/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Industroyer"><div class="malmon-name">Industroyer</div><div class="lenaean"><span class="lenaean-name">Winwareia Destroyor Powergridium (Ukraine 2016)</span></div></div>
+      <div class="malmon-card"><img src="/nimda/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Nimda"><div class="malmon-name">Nimda</div><div class="lenaean"><span class="lenaean-name">Winwormia Infector Adminius (Global 2001)</span></div></div>
     </div>
 
-    <h1>Generation 2 Malmons</h1>
+    <h2 class="gen-title">Generation 2 Malmons</h2>
     <div class="gallery">
-      <div class="malmon-card"><img src="/wirelurker/anime.gif" class="square-img" alt="WireLurker"><div class="malmon-name">WireLurker</div></div>
-      <div class="malmon-card"><img src="/code_red/anime.gif" class="square-img" alt="Code Red"><div class="malmon-name">Code Red</div></div>
-      <div class="malmon-card"><img src="/lockbit/anime.gif" class="square-img" alt="LockBit"><div class="malmon-name">LockBit</div></div>
-      <div class="malmon-card"><img src="/qrlog/anime.gif" class="square-img" alt="QRLog"><div class="malmon-name">QRLog</div></div>
-      <div class="malmon-card"><img src="/zloader/anime.gif" class="square-img" alt="ZLoader"><div class="malmon-name">ZLoader</div></div>
-      <div class="malmon-card"><img src="/exotickler/anime.gif" class="square-img" alt="ExoTickler"><div class="malmon-name">ExoTickler</div></div>
-      <div class="malmon-card"><img src="/maliffic/anime.gif" class="square-img" alt="Malicious Traffic"><div class="malmon-name">Malicious Traffic</div></div>
-      <div class="malmon-card"><img src="/triton/anime.gif" class="square-img" alt="Triton"><div class="malmon-name">Triton</div></div>
+      <div class="malmon-card"><img src="/wirelurker/anime.gif" loading="lazy" decoding="async" class="square-img" alt="WireLurker"><div class="malmon-name">WireLurker</div></div>
+      <div class="malmon-card"><img src="/code_red/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Code Red"><div class="malmon-name">Code Red</div></div>
+      <div class="malmon-card"><img src="/lockbit/anime.gif" loading="lazy" decoding="async" class="square-img" alt="LockBit"><div class="malmon-name">LockBit</div></div>
+      <div class="malmon-card"><img src="/qrlog/anime.gif" loading="lazy" decoding="async" class="square-img" alt="QRLog"><div class="malmon-name">QRLog</div></div>
+      <div class="malmon-card"><img src="/zloader/anime.gif" loading="lazy" decoding="async" class="square-img" alt="ZLoader"><div class="malmon-name">ZLoader</div></div>
+      <div class="malmon-card"><img src="/exotickler/anime.gif" loading="lazy" decoding="async" class="square-img" alt="ExoTickler"><div class="malmon-name">ExoTickler</div></div>
+      <div class="malmon-card"><img src="/maliffic/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Malicious Traffic"><div class="malmon-name">Malicious Traffic</div></div>
+      <div class="malmon-card"><img src="/triton/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Triton"><div class="malmon-name">Triton</div></div>
 
-      <div class="malmon-card"><img src="/flubot/anime.gif" class="square-img" alt="FluBot"><div class="malmon-name">FluBot</div></div>
-      <div class="malmon-card"><img src="/privateloader/anime.gif" class="square-img" alt="PrivateLoader"><div class="malmon-name">PrivateLoader</div></div>
-      <div class="malmon-card"><img src="/winnti/anime.gif" class="square-img" alt="Winnti"><div class="malmon-name">Winnti</div></div>
-      <div class="malmon-card"><img src="/lemonduck/anime.gif" class="square-img" alt="LemonDuck"><div class="malmon-name">LemonDuck</div></div>
-      <div class="malmon-card"><img src="/akairyu/anime.gif" class="square-img" alt="AkaiRyu"><div class="malmon-name">AkaiRyu</div></div>
-      <div class="malmon-card"><img src="/happy99/anime.gif" class="square-img" alt="Happy99"><div class="malmon-name">Happy99</div></div>
-      <div class="malmon-card"><img src="/sparkkitty/anime.gif" class="square-img" alt="SparkKitty"><div class="malmon-name">SparkKitty</div></div>
-      <div class="malmon-card"><img src="/magistr/anime.gif" class="square-img" alt="Magistr"><div class="malmon-name">Magistr</div></div>
+      <div class="malmon-card"><img src="/flubot/anime.gif" loading="lazy" decoding="async" class="square-img" alt="FluBot"><div class="malmon-name">FluBot</div></div>
+      <div class="malmon-card"><img src="/privateloader/anime.gif" loading="lazy" decoding="async" class="square-img" alt="PrivateLoader"><div class="malmon-name">PrivateLoader</div></div>
+      <div class="malmon-card"><img src="/winnti/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Winnti"><div class="malmon-name">Winnti</div></div>
+      <div class="malmon-card"><img src="/lemonduck/anime.gif" loading="lazy" decoding="async" class="square-img" alt="LemonDuck"><div class="malmon-name">LemonDuck</div></div>
+      <div class="malmon-card"><img src="/akairyu/anime.gif" loading="lazy" decoding="async" class="square-img" alt="AkaiRyu"><div class="malmon-name">AkaiRyu</div></div>
+      <div class="malmon-card"><img src="/happy99/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Happy99"><div class="malmon-name">Happy99</div></div>
+      <div class="malmon-card"><img src="/sparkkitty/anime.gif" loading="lazy" decoding="async" class="square-img" alt="SparkKitty"><div class="malmon-name">SparkKitty</div></div>
+      <div class="malmon-card"><img src="/magistr/anime.gif" loading="lazy" decoding="async" class="square-img" alt="Magistr"><div class="malmon-name">Magistr</div></div>
 
     </div>
 
@@ -369,10 +391,70 @@
       For inquiries, please contact: contact@malmons.world
       <br>
       Malmons aka Malware Monsters © 2026 Lena Yu aka LambdaMamba. All rights reserved.
+      <br>
+      マルモンズ・マルウェアモンスターズ © 2026 Lena Yu aka LambdaMamba
     </div>
   </div>
 
 
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://malmons.world/#org",
+        "name": "Malmons World Ltd",
+        "alternateName": ["Malmons", "Malware Monsters", "マルモンズ", "Malmons World"],
+        "url": "https://malmons.world/",
+        "logo": "https://malmons.world/malmonslogo.png",
+        "founder": { "@id": "https://malmons.world/#lena" },
+        "sameAs": [
+          "https://instagram.com/malmons.world",
+          "https://linkedin.com/company/malmonsworld",
+          "https://x.com/malmons_world",
+          "https://github.com/LambdaMamba"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://malmons.world/#lena",
+        "name": "Lena Yu",
+        "alternateName": ["LambdaMamba", "Lena Yu aka LambdaMamba"],
+        "jobTitle": "Malware Researcher, Educator and Founder",
+        "worksFor": { "@id": "https://malmons.world/#org" },
+        "sameAs": [
+          "https://github.com/LambdaMamba",
+          "https://x.com/malmons_world",
+          "https://linkedin.com/company/malmonsworld"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://malmons.world/#website",
+        "name": "Malmons",
+        "alternateName": ["Malware Monsters", "マルモンズ", "Malmons World"],
+        "url": "https://malmons.world/",
+        "inLanguage": ["en", "ja"],
+        "publisher": { "@id": "https://malmons.world/#org" }
+      },
+      {
+        "@type": "WebSite",
+        "name": "Malmons Lab",
+        "url": "https://lab.malmons.world/",
+        "description": "A gamified malware analysis and reverse engineering training platform in the browser.",
+        "publisher": { "@id": "https://malmons.world/#org" }
+      },
+      {
+        "@type": "WebSite",
+        "name": "Malmons Kart",
+        "url": "https://kart.malmons.world/",
+        "description": "A retro kart racing game starring the Malmons.",
+        "publisher": { "@id": "https://malmons.world/#org" }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
